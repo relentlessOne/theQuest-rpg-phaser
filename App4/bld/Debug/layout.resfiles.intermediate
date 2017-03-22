@@ -2,6 +2,7 @@ css\default.css
 fonts\nokia16black.png
 fonts\nokia16black.xml
 images\character-start.png
+images\dark-elf-bandit.png
 images\LockScreenLogo.scale-200.png
 images\SplashScreen.scale-200.png
 images\Square150x150Logo.scale-200.png
@@ -13,9 +14,9 @@ images\wolfsheet1.png
 images\wolf-side.png
 images\wolf-side-howl.png
 index.html
+js\bandit.js
 js\loadSprites.js
 js\main.js
 js\phaser.js
 js\player.js
-js\wolf.js
 sounds\fx_mixdown.mp3

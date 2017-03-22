@@ -18,8 +18,11 @@
             this.game = rpg;
             this.char = this.game.add.sprite(120, 100, 'char-start');
             this.game.physics.enable(this.char, Phaser.Physics.ARCADE);
-            this.loadAnimations();
             this.char.body.collideWorldBounds = true;
+            this.loadAnimations();
+            this.char.body.bounce.setTo(1, 1);
+            this.char.body.velocity.x = 0;
+            this.char.body.velocity.y = 0;
 
             
 
@@ -126,8 +129,8 @@
                 var relToPointY = this.char.y + centerCharSprite - capturedMouseY;
                 var shortestRoad = (relToPointX > relToPointY);
 
-                Debug.writeln(relToPointX);
-                Debug.writeln(relToPointY);
+             //   Debug.writeln(relToPointX);
+              //  Debug.writeln(relToPointY);
 
                 if ((shortestRoad && makeitfalse) || ctrlNextMove) {
 

@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\character-start.png">
       <PackagePath>images\character-start.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\dark-elf-bandit.png">
+      <PackagePath>images\dark-elf-bandit.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\LockScreenLogo.scale-200.png">
       <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
@@ -70,6 +73,9 @@
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\bandit.js">
+      <PackagePath>js\bandit.js</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\main.js">
       <PackagePath>js\main.js</PackagePath>
     </AppxPackagedFile>
@@ -81,9 +87,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\loadSprites.js">
       <PackagePath>js\loadSprites.js</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\wolf.js">
-      <PackagePath>js\wolf.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\css\default.css">
       <PackagePath>css\default.css</PackagePath>

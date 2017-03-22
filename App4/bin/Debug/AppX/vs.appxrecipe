@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-22T10:29:39.037</Modified>
+      <Modified>2017-03-22T14:58:12.013</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +39,10 @@
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\character-start.png">
       <PackagePath>images\character-start.png</PackagePath>
       <Modified>2017-03-19T13:47:08.963</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\dark-elf-bandit.png">
+      <PackagePath>images\dark-elf-bandit.png</PackagePath>
+      <Modified>2017-03-22T14:51:53.475</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\LockScreenLogo.scale-200.png">
       <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
@@ -76,7 +80,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\wolf-side-howl.png">
       <PackagePath>images\wolf-side-howl.png</PackagePath>
-      <Modified>2017-03-21T12:36:50.148</Modified>
+      <Modified>2017-03-22T12:37:31.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\wolf-side.png">
       <PackagePath>images\wolf-side.png</PackagePath>
@@ -92,11 +96,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2017-03-22T10:27:05.853</Modified>
+      <Modified>2017-03-22T14:58:11.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\bandit.js">
+      <PackagePath>js\bandit.js</PackagePath>
+      <Modified>2017-03-22T15:55:01.869</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\main.js">
       <PackagePath>js\main.js</PackagePath>
-      <Modified>2017-03-22T10:27:24.024</Modified>
+      <Modified>2017-03-22T15:50:49.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\phaser.js">
       <PackagePath>js\phaser.js</PackagePath>
@@ -104,15 +112,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\player.js">
       <PackagePath>js\player.js</PackagePath>
-      <Modified>2017-03-22T10:12:47.569</Modified>
+      <Modified>2017-03-22T15:55:12.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\loadSprites.js">
       <PackagePath>js\loadSprites.js</PackagePath>
-      <Modified>2017-03-22T09:50:16.635</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\wolf.js">
-      <PackagePath>js\wolf.js</PackagePath>
-      <Modified>2017-03-22T10:26:57.064</Modified>
+      <Modified>2017-03-22T14:56:23.435</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\css\default.css">
       <PackagePath>css\default.css</PackagePath>
@@ -125,7 +129,7 @@
     <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-22T10:29:38.945</Modified>
+      <Modified>2017-03-22T14:58:11.852</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

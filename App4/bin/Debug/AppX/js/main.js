@@ -1,17 +1,18 @@
-﻿var game = new Phaser.Game(1024, 760, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+﻿var game = new Phaser.Game(1024, 760, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
 
 var player;
-var wolf;
+var bandit;
 
 function preload() {
      new LoadSprites(this);
 }
 
 function create() {
-
     game.physics.startSystem(Phaser.Physics.ARCADE);
+  
     player = new Player(game);
-    wolf = new Wolf(game);
+ 
+    bandit = new Bandit(game);
 
 
 }
@@ -19,13 +20,23 @@ function create() {
 function update() {
 
     player.update();
+    //game.physics.arcade.overlap(player, bandit, null, this);
 
-   // game.physics.arcade.overlap(char, wolf, collision);
+     game.physics.arcade.collide(player.char, bandit.bandit);
+    
+   // bandit.bandit.kill();
+    
+   // game.physics.arcade.overlap(player.char, bandit.bandit, collision);
 
 }
 
-function collision(char, wolf) {
-    followMousePointer = false;
+function collision() {
+    Debug.writeln("x");
+}
+
+function render() {
+    game.debug.body(player.char);
+    game.debug.body(bandit.bandit);
 }
 
 
