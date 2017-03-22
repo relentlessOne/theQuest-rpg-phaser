@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-908AUB5</Machine>
+    <WindowsUser>PC</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>53abca5b-231d-47eb-9d6d-b0856cfe650f</PackageIdentityName>
+    <PackageIdentityPublisher>CN=PC</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\bld\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <RegisteredManifestChecksum>6E6FE34211E783E67118FC18152508EDA41C3F6A97ACBFCC83609BE64625721A</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>53abca5b-231d-47eb-9d6d-b0856cfe650f_1.0.0.0_neutral__6ekdg42zp5p5j</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>53abca5b-231d-47eb-9d6d-b0856cfe650f_6ekdg42zp5p5j!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>53abca5b-231d-47eb-9d6d-b0856cfe650f</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=PC</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-22T10:29:39.037</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\fonts\nokia16black.png">
+      <PackagePath>fonts\nokia16black.png</PackagePath>
+      <Modified>2017-03-19T11:18:04.082</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\character-start.png">
+      <PackagePath>images\character-start.png</PackagePath>
+      <Modified>2017-03-19T13:47:08.963</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\LockScreenLogo.scale-200.png">
+      <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2017-03-19T11:18:04.086</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\SplashScreen.scale-200.png">
+      <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-19T11:18:04.086</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\Square150x150Logo.scale-200.png">
+      <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-19T11:18:04.087</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\Square44x44Logo.scale-200.png">
+      <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-19T11:18:04.087</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-19T11:18:04.088</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\StoreLogo.png">
+      <PackagePath>images\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-19T11:18:04.089</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\Wide310x150Logo.scale-200.png">
+      <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-19T11:18:04.089</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\wolf-side-howl.png">
+      <PackagePath>images\wolf-side-howl.png</PackagePath>
+      <Modified>2017-03-21T12:36:50.148</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\wolf-side.png">
+      <PackagePath>images\wolf-side.png</PackagePath>
+      <Modified>2017-03-21T12:45:45.390</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\images\wolfsheet1.png">
+      <PackagePath>images\wolfsheet1.png</PackagePath>
+      <Modified>2017-03-21T12:13:54.476</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
+      <PackagePath>fonts\nokia16black.xml</PackagePath>
+      <Modified>2017-03-19T11:18:04.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\index.html">
+      <PackagePath>index.html</PackagePath>
+      <Modified>2017-03-22T10:27:05.853</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\main.js">
+      <PackagePath>js\main.js</PackagePath>
+      <Modified>2017-03-22T10:27:24.024</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\phaser.js">
+      <PackagePath>js\phaser.js</PackagePath>
+      <Modified>2017-03-19T11:18:04.272</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\player.js">
+      <PackagePath>js\player.js</PackagePath>
+      <Modified>2017-03-22T10:12:47.569</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\loadSprites.js">
+      <PackagePath>js\loadSprites.js</PackagePath>
+      <Modified>2017-03-22T09:50:16.635</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\js\wolf.js">
+      <PackagePath>js\wolf.js</PackagePath>
+      <Modified>2017-03-22T10:26:57.064</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2017-03-19T13:27:16.331</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\sounds\fx_mixdown.mp3">
+      <PackagePath>sounds\fx_mixdown.mp3</PackagePath>
+      <Modified>2017-03-19T11:18:04.280</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Documents\Visual Studio 2015\Projects\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-22T10:29:38.945</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
