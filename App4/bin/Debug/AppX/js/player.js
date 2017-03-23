@@ -1,15 +1,39 @@
-﻿let Player = (function () {
+﻿
+
+
+
+
+let Player = (function () {
+
+
+
+
+    let key_W;
+    let key_S;
+    let key_A;
+    let key_D;
+
+    
+
+
+
+    let numOfPressedKeyes = 0;
+
+
+
+
+    let pressed = false;
 
 
     let allowMove = true;
-    let followMousePointer = false;
+
     let keyPressed = false;
     let direction = 'up';
     let capturedMouseX = 0;
     let capturedMouseY = 0;
     let makeitfalse = true;
     let ctrlNextMove = false;
-    let disableClick = false;
+
 
 
     class Player {
@@ -23,14 +47,47 @@
             this.char.body.bounce.setTo(1, 1);
             this.char.body.velocity.x = 0;
             this.char.body.velocity.y = 0;
+            this.followMousePointer = false;
+            this.direction = 'up';
+            this.disableClick = false;
+            key_W = game.input.keyboard.addKey(Phaser.Keyboard.W);
+            key_S = game.input.keyboard.addKey(Phaser.Keyboard.S);
+            key_A = game.input.keyboard.addKey(Phaser.Keyboard.A);
+            key_D = game.input.keyboard.addKey(Phaser.Keyboard.D);
 
-            
+            this.game.input.keyboard.addCallbacks(this.game, this.chuj, null, null);
+
+            this.allowMove = true;
+        }
+
+
+        test() {
+            var count = 0;
+            if (key_W.isDown) count++;
+            if (key_S.isDown) count++;
+            if (key_A.isDown) count++;
+            if (key_D.isDown) count++;
+
+            if (count > 1) {
+
+
+                return false;
+
+            } else {
+                return true;
+            }
+
 
         }
 
         update() {
+            this.allowMove = true;
             this.keyboardCtrl();
-            this.mouseCtrl();
+
+            if(this.allowMove)
+                this.mouseCtrl();
+
+           // Debug.writeln(this.char.body.velocity.x);
         }
 
         loadAnimations() {
@@ -60,37 +117,61 @@
 
 
 
+ 
+
         keyboardCtrl() {
-            if (allowMove) {
-                if (game.input.keyboard.isDown(Phaser.Keyboard.A)) {
-                    this.char.x -= 3.5;
-                    this.char.animations.play('walk-left');
-                    direction = 'left';
-                }
-                else if (game.input.keyboard.isDown(Phaser.Keyboard.D)) {
-                    this.char.x += 3.5;
-                    this.char.animations.play('walk-right');
-                    direction = 'right';
+         
+
+
+
+           
+                if (this.test()) {
+                    if (key_W.isDown) {
+                        this.char.body.velocity.y = -200;
+                        this.char.animations.play('walk-up');
+                        this.direction = 'up';
+
+
+                    } else if (key_S.isDown) {
+                        this.char.body.velocity.y = 200;
+                        this.char.animations.play('walk-down');
+                        this.direction = 'down';
+
+
+                    } else if (key_A.isDown) {
+                        this.char.body.velocity.x = -200;
+                        this.char.animations.play('walk-left');
+                        this.direction = 'left';
+
+
+                    } else if (key_D.isDown) {
+                        this.char.body.velocity.x = 200;
+                        this.char.animations.play('walk-right');
+                        this.direction = 'right';
+
+                    } else {
+                       // this.char.animations.stop();
+                        this.char.body.velocity.x = 0;
+                        this.char.body.velocity.y = 0;
+                    }
+
+
                 }
 
-                if (game.input.keyboard.isDown(Phaser.Keyboard.W)) {
-                    this.char.y -= 3.5;
-                    this.char.animations.play('walk-up');
+               // Debug.writeln(pressed);
+                  
 
-                    direction = 'up';
+              
 
-                }
-                else if (game.input.keyboard.isDown(Phaser.Keyboard.S)) {
-                    this.char.y += 3.5;
-                    this.char.animations.play('walk-down');
-                    direction = 'down';
-                }
 
-            }
+
+
+
+           
 
             if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && !keyPressed) {
                 allowMove = false;
-               
+
                 var anim = {};
 
                 if (direction === 'up') {
@@ -116,30 +197,41 @@
             }
         }
 
+
+
+
         mouseCtrl() {
-            if (game.input.activePointer.isDown && !disableClick) {
+            if (game.input.activePointer.isDown && !this.disableClick) {
                 capturedMouseX = game.input.mousePointer.x;
                 capturedMouseY = game.input.mousePointer.y;
-                followMousePointer = true;
+
+
+                this.followMousePointer = true;
             }
 
-            if (followMousePointer) {
+            if (this.followMousePointer) {
                 var centerCharSprite = 32;
+
                 var relToPointX = this.char.x + centerCharSprite - capturedMouseX;
                 var relToPointY = this.char.y + centerCharSprite - capturedMouseY;
                 var shortestRoad = (relToPointX > relToPointY);
 
-             //   Debug.writeln(relToPointX);
-              //  Debug.writeln(relToPointY);
+                //   Debug.writeln(relToPointX);
+                //  Debug.writeln(relToPointY);
 
                 if ((shortestRoad && makeitfalse) || ctrlNextMove) {
 
                     if (relToPointX > 0) {
                         this.char.animations.play('walk-left');
-                        this.char.x -= 3.5;
+                        //this.char.x -= 3.5;
+                        this.char.body.velocity.x = -200;
+                        this.direction = 'left';
                     } else {
                         this.char.animations.play('walk-right');
-                        this.char.x += 3.5;
+                        //this.char.x += 3.5;
+                        this.char.body.velocity.x = 200;
+                        this.direction = 'right';
+
                     }
 
                     if (relToPointX <= 3 && relToPointX >= -1.5) {
@@ -151,11 +243,15 @@
                 } else {
 
                     if (relToPointY > 0) {
-                        this.char.y -= 3.5;
+                        // this.char.y -= 3.5;
+                        this.char.body.velocity.y = -200;
                         this.char.animations.play('walk-up');
+                        this.direction = 'up';
                     } else {
-                        this.char.y += 3.5;
+                        //this.char.y += 3.5;
+                        this.char.body.velocity.y = 200;
                         this.char.animations.play('walk-down');
+                        this.direction = 'down';
                     }
 
                     if (relToPointY <= 3 && relToPointY >= -1.5) {
@@ -164,11 +260,11 @@
                 }
 
                 if (relToPointY <= 3.5 && relToPointY >= -3 && relToPointX <= 3.5 && relToPointX >= -3) {
-                    followMousePointer = false;
+                    this.followMousePointer = false;
                     this.char.animations.stop(null, true);
                 }
 
-            }
+            } 
         }
     }
 

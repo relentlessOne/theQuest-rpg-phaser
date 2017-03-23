@@ -8,13 +8,24 @@
 
         constructor(game) {
             this.game = game;
-            this.bandit = this.game.add.sprite(200, 100, 'bandit');
+            this.bandit = this.game.add.sprite(game.world.centerX, game.world.centerY, 'bandit');
             this.loadAnimations();
             this.game.physics.enable(this.bandit, Phaser.Physics.ARCADE);
             this.bandit.body.collideWorldBounds = true;
-            this.bandit.body.bounce.setTo(1, 1);
+            this.bandit.body.bounce.set(1);
+
             this.bandit.body.velocity.x = 0;
             this.bandit.body.velocity.y = 0;
+
+
+            this.lookStay = {
+                "down": 131,
+                "up": 105,
+                "left": 118,
+                "right": 143,
+            }
+
+      
         }
 
         loadAnimations() {
