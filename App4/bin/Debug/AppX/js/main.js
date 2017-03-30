@@ -4,17 +4,50 @@ var player;
 var bandit;
 
 function preload() {
+
+    game.load.tilemap('world1', 'images/worldMap.json', null, Phaser.Tilemap.TILED_JSON);
+    game.load.image('tile1', 'images/base_out_atlas.png');
+    game.load.image('tile2', 'images/build_atlas.png');
+    game.load.image('tile3', 'images/obj_misk_atlas.png');
+    game.load.image('tile4', 'images/terrain_atlas.png');
      new LoadSprites(this);
 }
 
+var map;
+var layer;
+
+
 function create() {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.physics.startSystem(Phaser.Physics.P2JS);
+
+
+    map = game.add.tilemap('world1');
+
+    //  The first parameter is the tileset name, as specified in the Tiled map editor (and in the tilemap json file)
+    //  The second parameter maps this name to the Phaser.Cache key 'tiles'
+    map.addTilesetImage('base_out_atlas', 'tile1');
+    map.addTilesetImage('terrain_atlas', 'tile4');
+    map.addTilesetImage('build_atlas', 'tile2');
+    map.addTilesetImage('obj_misk_atlas', 'tile3');
+
+    //  Creates a layer from the World1 layer in the map data.
+    //  A Layer is effectively like a Phaser.Sprite, so is added to the display list.
+
   
+
+
+    layer = map.createLayer('Trawa-drogi');
+    layer = map.createLayer('kanion');
+    layer = map.createLayer('Warstwa Kafelków 3');
+
     player = new Player(game);
- 
+
     bandit = new Bandit(game);
 
+    //  This resizes the game world to match the layer dimensions
+    layer.resizeWorld();
 
+    game.camera.follow(player.char, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 }
 
 function update() {

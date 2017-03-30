@@ -136,6 +136,7 @@ let Player = (function () {
                         this.char.body.velocity.y = 200;
                         this.char.animations.play('walk-down');
                         this.direction = 'down';
+               
 
 
                     } else if (key_A.isDown) {
@@ -202,11 +203,11 @@ let Player = (function () {
 
         mouseCtrl() {
             if (game.input.activePointer.isDown && !this.disableClick) {
-                capturedMouseX = game.input.mousePointer.x;
-                capturedMouseY = game.input.mousePointer.y;
+                capturedMouseX = game.input.activePointer.x;
+                capturedMouseY =game.input.activePointer.y;
 
-
-                this.followMousePointer = true;
+                game.physics.arcade.moveToPointer(this.char, 600);
+                this.followMousePointer = false;
             }
 
             if (this.followMousePointer) {
@@ -216,20 +217,20 @@ let Player = (function () {
                 var relToPointY = this.char.y + centerCharSprite - capturedMouseY;
                 var shortestRoad = (relToPointX > relToPointY);
 
-                //   Debug.writeln(relToPointX);
-                //  Debug.writeln(relToPointY);
+                Debug.writeln(game.input.activePointer.x);
+                Debug.writeln(capturedMouseX);
 
                 if ((shortestRoad && makeitfalse) || ctrlNextMove) {
 
                     if (relToPointX > 0) {
                         this.char.animations.play('walk-left');
                         //this.char.x -= 3.5;
-                        this.char.body.velocity.x = -200;
+                        this.char.body.velocity.x = -600;
                         this.direction = 'left';
                     } else {
                         this.char.animations.play('walk-right');
                         //this.char.x += 3.5;
-                        this.char.body.velocity.x = 200;
+                        this.char.body.velocity.x = 600;
                         this.direction = 'right';
 
                     }
@@ -244,12 +245,13 @@ let Player = (function () {
 
                     if (relToPointY > 0) {
                         // this.char.y -= 3.5;
-                        this.char.body.velocity.y = -200;
+                       
+                        this.char.body.velocity.y = -600;
                         this.char.animations.play('walk-up');
                         this.direction = 'up';
                     } else {
                         //this.char.y += 3.5;
-                        this.char.body.velocity.y = 200;
+                        this.char.body.velocity.y = 600;
                         this.char.animations.play('walk-down');
                         this.direction = 'down';
                     }
