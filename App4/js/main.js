@@ -39,12 +39,14 @@ function create() {
 
     layer = map.createLayer('Trawa-drogi');
     layer = map.createLayer('kanion');
-    layer = map.createLayer('Warstwa Kafelków 3');
+   // layer = map.createLayer('Warstwa Kafelków 3');
 
     player = new Player(game);
 
     bandit = new Bandit(game);
 
+   // game.physics.arcade.collide(player.char, 'kanion');
+    map.setCollisionBetween(1, 10000, true, 'kanion');
     //  This resizes the game world to match the layer dimensions
     layer.resizeWorld();
 
@@ -55,6 +57,10 @@ function create() {
     marker.drawRect(0, 0, 32, 32);
 
     game.input.addMoveCallback(updateMarker, this);
+
+ 
+ 
+
 
 }
 
@@ -71,6 +77,8 @@ function update() {
     //game.physics.arcade.overlap(player, bandit, null, this);
 
     game.physics.arcade.collide(player.char, bandit.bandit, collision);
+
+    game.physics.arcade.collide(player.char, layer);
     
    // bandit.bandit.kill();
     

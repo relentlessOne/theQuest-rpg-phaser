@@ -15,7 +15,8 @@ let Player = (function () {
 
     
 
-
+    let moveYDone;
+    let moveXDone;
 
     let numOfPressedKeyes = 0;
 
@@ -58,6 +59,8 @@ let Player = (function () {
             this.game.input.keyboard.addCallbacks(this.game, this.chuj, null, null);
 
             this.allowMove = true;
+
+  
         }
 
 
@@ -207,7 +210,8 @@ let Player = (function () {
                 var x = game.input.activePointer.worldX;
                 var y = game.input.activePointer.worldY;
 
-
+                moveYDone = false;
+                moveXDone = false;
       
                 capturedMouseX = (32 * Math.trunc(x/32)) + 16;
                 capturedMouseY = (32 * Math.trunc(y/32)) + 16;
@@ -225,83 +229,80 @@ let Player = (function () {
             if (this.followMousePointer) {
                 var centerCharSprite = 32;
 
-                
+                var playerPositionX = (32 * Math.trunc(this.char.worldPosition.x / 32)) + 16;
+                var playerPositionY = (32 * Math.trunc(this.char.worldPosition.y / 32)) + 16;
 
-                var relToPointX = (this.char.worldPosition.x + centerCharSprite) - capturedMouseX;
-                var relToPointY = (this.char.worldPosition.y + centerCharSprite) - capturedMouseY;
+                var relToPointX = (playerPositionX ) - capturedMouseX;
+                var relToPointY = (playerPositionY + centerCharSprite) - capturedMouseY;
                 var shortestRoad = (relToPointX > relToPointY);
 
 
-
-                Debug.writeln(relToPointX);
-
-                if ((shortestRoad && makeitfalse) || ctrlNextMove) {
-
-                    if (relToPointX > 0) {
-                        this.char.animations.play('walk-left');
-                        //this.char.x -= 3.5;
-                        this.char.body.velocity.x = -200;
-                        this.direction = 'left';
-
-                        if (relToPointX < 0) {
-                            ctrlNextMove = false;
-                            makeitfalse = false;
-                        }
-
-                    } else {
-                        this.char.animations.play('walk-right');
-                        //this.char.x += 3.5;
-                        this.char.body.velocity.x = 200;
-                        this.direction = 'right';
-
-                        if (relToPointX > 0) {
-                            ctrlNextMove = false;
-                            makeitfalse = false;
-                        }
-
-                    }
-
-                
-
-
-                } else {
-
-                    if (relToPointY > 0) {
-                        // this.char.y -= 3.5;
-                       
-                        this.char.body.velocity.y = -200;
-                        this.char.animations.play('walk-up');
-                        this.direction = 'up';
-
-                        if (relToPointY < 0) {
-                            ctrlNextMove = true;
-                        }
-
-                    } else {
-                        //this.char.y += 3.5;
+                if (!moveYDone) {
+                    if (this.char.position.y < capturedMouseY) {
                         this.char.body.velocity.y = 200;
                         this.char.animations.play('walk-down');
                         this.direction = 'down';
 
+                
 
-                        if (relToPointY > 0) {
-                            ctrlNextMove = true;
-                        }
+                     
+                    } else {
+                        this.char.body.velocity.y = -200;
+                        this.char.animations.play('walk-up');
+                        this.direction = 'up';
+
+                   
+                       
+                    }
+
+
+
+                    if (Math.abs(Math.trunc(this.char.position.y) - capturedMouseY) <= 2) {
+                        moveYDone = true;
+                        this.char.body.velocity.y = 0;
+                    }
+               
+
+                    Debug.write("charY: ");
+                    Debug.write(Math.abs(Math.trunc(this.char.position.y) - capturedMouseY));
+                    Debug.writeln();
+                    Debug.write("capturedMouseY: ");
+                    Debug.write(capturedMouseY);
+                    
+                } else {
+
+
+                    if (this.char.position.x < capturedMouseX) {
+                        this.char.body.velocity.x = 200;
+                        this.char.animations.play('walk-right');
+                        this.direction = 'right';
+
+
+
+
+                    } else {
+                        this.char.body.velocity.x = -200;
+                        this.char.animations.play('walk-left');
+                        this.direction = 'left';
+
+
 
                     }
 
-                 
+
+                    if (Math.abs(Math.trunc(this.char.position.x) - capturedMouseX) <= 2) {
+
+                        this.followMousePointer = false;
+
+                        // moveXDone = true;
+                       // this.char.body.velocity.y = 0;
+                    }
+
                 }
 
-                //if (relToPointY <= 3.5 && relToPointY >= -3 && relToPointX <= 3.5 && relToPointX >= -3) {
-                //    this.followMousePointer = false;
-                //    this.char.animations.stop(null, true);
-                //}
+  
+        
 
-                if (relToPointY <= 3.5 && relToPointY >= -3 && relToPointX <= 3.5 && relToPointX >= -3) {
-                    this.followMousePointer = false;
-                    this.char.animations.stop(null, true);
-                }
 
             } 
         }
