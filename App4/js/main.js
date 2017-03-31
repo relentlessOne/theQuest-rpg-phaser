@@ -15,6 +15,7 @@ function preload() {
 
 var map;
 var layer;
+var marker;
 
 
 function create() {
@@ -48,6 +49,20 @@ function create() {
     layer.resizeWorld();
 
     game.camera.follow(player.char, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+
+    marker = game.add.graphics();
+    marker.lineStyle(2, 0xffffff, 1);
+    marker.drawRect(0, 0, 32, 32);
+
+    game.input.addMoveCallback(updateMarker, this);
+
+}
+
+function updateMarker() {
+
+    marker.x = layer.getTileX(game.input.activePointer.worldX) * 32;
+    marker.y = layer.getTileY(game.input.activePointer.worldY) * 32;
+
 }
 
 function update() {

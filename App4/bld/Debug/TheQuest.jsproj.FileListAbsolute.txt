@@ -46,3 +46,19 @@ C:\Users\PC\Documents\Visual Studio 2015\Projects\Nowy folder (2)\theQuest-rpg-p
 C:\Users\PC\Documents\Visual Studio 2015\Projects\Nowy folder (2)\theQuest-rpg-phaser\App4\bld\Debug\qualifiers.txt.intermediate
 C:\Users\PC\Documents\Visual Studio 2015\Projects\Nowy folder (2)\theQuest-rpg-phaser\App4\bld\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\PC\Documents\Visual Studio 2015\Projects\Nowy folder (2)\theQuest-rpg-phaser\App4\bld\Debug\ProjectArchitectures.txt
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bin\Debug\TheQuest.build.appxrecipe
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\ResourceHandlingTask.state
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\priconfig.xml
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\priconfig.xml.intermediate
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\layout.resfiles
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\layout.resfiles.intermediate
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\resources.resfiles
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\resources.resfiles.intermediate
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\pri.resfiles
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\pri.resfiles.intermediate
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\qualifiers.txt
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\qualifiers.txt.intermediate
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\bld\Debug\ProjectArchitectures.txt

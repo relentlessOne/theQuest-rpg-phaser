@@ -203,42 +203,65 @@ let Player = (function () {
 
         mouseCtrl() {
             if (game.input.activePointer.isDown && !this.disableClick) {
-                capturedMouseX = game.input.activePointer.x;
-                capturedMouseY =game.input.activePointer.y;
 
-                game.physics.arcade.moveToPointer(this.char, 600);
-                this.followMousePointer = false;
+                var x = game.input.activePointer.worldX;
+                var y = game.input.activePointer.worldY;
+
+
+      
+                capturedMouseX = (32 * Math.trunc(x/32)) + 16;
+                capturedMouseY = (32 * Math.trunc(y/32)) + 16;
+
+
+                Debug.writeln(capturedMouseX);
+             //   Debug.writeln(capturedMouseY);
+      
+
+
+                //game.physics.arcade.moveToPointer(this.char, 600);
+                this.followMousePointer = true;
             }
 
             if (this.followMousePointer) {
                 var centerCharSprite = 32;
 
-                var relToPointX = this.char.x + centerCharSprite - capturedMouseX;
-                var relToPointY = this.char.y + centerCharSprite - capturedMouseY;
+                
+
+                var relToPointX = (this.char.worldPosition.x + centerCharSprite) - capturedMouseX;
+                var relToPointY = (this.char.worldPosition.y + centerCharSprite) - capturedMouseY;
                 var shortestRoad = (relToPointX > relToPointY);
 
-                Debug.writeln(game.input.activePointer.x);
-                Debug.writeln(capturedMouseX);
+
+
+                Debug.writeln(relToPointX);
 
                 if ((shortestRoad && makeitfalse) || ctrlNextMove) {
 
                     if (relToPointX > 0) {
                         this.char.animations.play('walk-left');
                         //this.char.x -= 3.5;
-                        this.char.body.velocity.x = -600;
+                        this.char.body.velocity.x = -200;
                         this.direction = 'left';
+
+                        if (relToPointX < 0) {
+                            ctrlNextMove = false;
+                            makeitfalse = false;
+                        }
+
                     } else {
                         this.char.animations.play('walk-right');
                         //this.char.x += 3.5;
-                        this.char.body.velocity.x = 600;
+                        this.char.body.velocity.x = 200;
                         this.direction = 'right';
 
+                        if (relToPointX > 0) {
+                            ctrlNextMove = false;
+                            makeitfalse = false;
+                        }
+
                     }
 
-                    if (relToPointX <= 3 && relToPointX >= -1.5) {
-                        ctrlNextMove = false;
-                        makeitfalse = false;
-                    }
+                
 
 
                 } else {
@@ -246,20 +269,34 @@ let Player = (function () {
                     if (relToPointY > 0) {
                         // this.char.y -= 3.5;
                        
-                        this.char.body.velocity.y = -600;
+                        this.char.body.velocity.y = -200;
                         this.char.animations.play('walk-up');
                         this.direction = 'up';
+
+                        if (relToPointY < 0) {
+                            ctrlNextMove = true;
+                        }
+
                     } else {
                         //this.char.y += 3.5;
-                        this.char.body.velocity.y = 600;
+                        this.char.body.velocity.y = 200;
                         this.char.animations.play('walk-down');
                         this.direction = 'down';
+
+
+                        if (relToPointY > 0) {
+                            ctrlNextMove = true;
+                        }
+
                     }
 
-                    if (relToPointY <= 3 && relToPointY >= -1.5) {
-                        ctrlNextMove = true;
-                    }
+                 
                 }
+
+                //if (relToPointY <= 3.5 && relToPointY >= -3 && relToPointX <= 3.5 && relToPointX >= -3) {
+                //    this.followMousePointer = false;
+                //    this.char.animations.stop(null, true);
+                //}
 
                 if (relToPointY <= 3.5 && relToPointY >= -3 && relToPointX <= 3.5 && relToPointX >= -3) {
                     this.followMousePointer = false;
