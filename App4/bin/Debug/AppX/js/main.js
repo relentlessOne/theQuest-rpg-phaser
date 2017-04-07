@@ -2,6 +2,7 @@
 
 var player;
 var bandit;
+var mapArr;
 
 function preload() {
 
@@ -10,7 +11,11 @@ function preload() {
     game.load.image('tile2', 'images/build_atlas.png');
     game.load.image('tile3', 'images/obj_misk_atlas.png');
     game.load.image('tile4', 'images/terrain_atlas.png');
-     new LoadSprites(this);
+    new LoadSprites(this);
+    new csvToArr("xx");
+
+
+
 }
 
 var map;

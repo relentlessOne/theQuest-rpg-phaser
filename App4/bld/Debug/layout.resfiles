@@ -1,3 +1,4 @@
+assets\jquery.min.js
 css\default.css
 fonts\nokia16black.png
 fonts\nokia16black.xml
@@ -21,8 +22,10 @@ images\wolf-side-howl.png
 images\worldMap.json
 index.html
 js\bandit.js
+js\csvToArr.js
 js\loadSprites.js
 js\main.js
 js\phaser.js
 js\player.js
+level_info\kanion.csv
 sounds\fx_mixdown.mp3

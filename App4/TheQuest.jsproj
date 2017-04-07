@@ -58,6 +58,7 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="assets\jquery.min.js" />
     <Content Include="fonts\nokia16black.png" />
     <Content Include="fonts\nokia16black.xml" />
     <Content Include="images\base_out_atlas.png" />
@@ -85,6 +86,8 @@
     <Content Include="js\phaser.js" />
     <Content Include="js\player.js" />
     <Content Include="js\loadSprites.js" />
+    <Content Include="js\csvToArr.js" />
+    <Content Include="level_info\kanion.csv" />
     <Content Include="sounds\fx_mixdown.mp3" />
     <None Include="App4_TemporaryKey.pfx" />
   </ItemGroup>
