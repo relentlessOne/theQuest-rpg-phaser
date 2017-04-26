@@ -25,6 +25,12 @@
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\assets\jquery.min.js">
       <PackagePath>assets\jquery.min.js</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\assets\phaser_pathfinding-0.2.0.js">
+      <PackagePath>assets\phaser_pathfinding-0.2.0.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\assets\phaser_pathfinding-0.2.0.min.js">
+      <PackagePath>assets\phaser_pathfinding-0.2.0.min.js</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\bandit.js">
       <PackagePath>js\bandit.js</PackagePath>
     </AppxPackagedFile>

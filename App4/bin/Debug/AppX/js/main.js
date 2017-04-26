@@ -4,11 +4,12 @@ var player;
 var bandit;
 var mapArr;
 var arrayForAStar;
+var easystar;
 
 function preload() {
 
-
     var csvArr = new csvToArr();
+    easystar = new EasyStar.js();
 
     game.load.tilemap('world1', 'level_info/worldMap.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tile1', 'level_info/base_out_atlas.png');
@@ -20,13 +21,16 @@ function preload() {
     setTimeout(() => {
    
         arrayForAStar = csvArr.returnParsedData();
-        for (var i = 0; i < 100 ; i++) {
-            for (var j = 0; j < 100 ; j++) {
-                Debug.write(arrayForAStar[i][j] + ",");
-            }
-            Debug.writeln();
-        }
-    }, 1000);
+
+        // pathfinder = game.plugins.add(Phaser.Plugin.PathFinderPlugin);
+   
+        easystar.setGrid(arrayForAStar);
+        easystar.setAcceptableTiles([-1]);
+
+      
+
+      
+    }, 500);
 
 
   
@@ -46,12 +50,13 @@ function preload() {
 var map;
 var layer;
 var marker;
-
+var blocked = false;
 
 function create() {
     game.physics.startSystem(Phaser.Physics.P2JS);
 
 
+   
     map = game.add.tilemap('world1');
 
     //  The first parameter is the tileset name, as specified in the Tiled map editor (and in the tilemap json file)
@@ -71,7 +76,7 @@ function create() {
     layer = map.createLayer('kanion');
    // layer = map.createLayer('Warstwa Kafelków 3');
 
-    player = new Player(game);
+    player = new Player(game, easystar);
 
     bandit = new Bandit(game);
 
@@ -89,7 +94,9 @@ function create() {
     game.input.addMoveCallback(updateMarker, this);
 
  
- 
+
+
+
 
 
 }
@@ -101,9 +108,12 @@ function updateMarker() {
 
 }
 
+
 function update() {
 
-    player.update();
+     player.update();
+
+
 
 
     game.physics.arcade.collide(player.char, bandit.bandit, collision);

@@ -59,6 +59,8 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="assets\jquery.min.js" />
+    <Content Include="assets\phaser_pathfinding-0.2.0.js" />
+    <Content Include="assets\phaser_pathfinding-0.2.0.min.js" />
     <Content Include="fonts\nokia16black.png" />
     <Content Include="fonts\nokia16black.xml" />
     <Content Include="images\char.json" />

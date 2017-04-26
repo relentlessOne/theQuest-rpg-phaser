@@ -34,14 +34,20 @@ let Player = (function () {
     let capturedMouseY = 0;
     let makeitfalse = true;
     let ctrlNextMove = false;
+    let rpgGame;
+    let go = false;
+
+    let playerX = 1;
+    let playerY = 1;
 
 
 
     class Player {
 
-        constructor(rpg) {
+        constructor(rpg, easyStar) {
             this.game = rpg;
-            this.char = this.game.add.sprite(120, 100, 'char-start');
+            this.easyStar = easyStar;
+            this.char = this.game.add.sprite(32, 32, 'char-start');
             this.game.physics.enable(this.char, Phaser.Physics.ARCADE);
             this.char.body.collideWorldBounds = true;
             this.loadAnimations();
@@ -205,7 +211,8 @@ let Player = (function () {
 
 
         mouseCtrl() {
-            if (game.input.activePointer.isDown && !this.disableClick) {
+         
+            if (game.input.activePointer.isDown || go) {
 
                 var x = game.input.activePointer.worldX;
                 var y = game.input.activePointer.worldY;
@@ -217,13 +224,47 @@ let Player = (function () {
                 capturedMouseY = (32 * Math.trunc(y/32)) + 16;
 
 
-                Debug.writeln(capturedMouseX);
+               // Debug.writeln(capturedMouseX);
              //   Debug.writeln(capturedMouseY);
       
 
 
                 //game.physics.arcade.moveToPointer(this.char, 600);
-                this.followMousePointer = true;
+                this.followMousePointer = false;
+
+                var playerPositionX = this.char.worldPosition.x;
+                var playerPositionY = this.char.worldPosition.y;
+              
+                this.easyStar.findPath(playerX, playerY, 4, 1,  (path) => {
+
+                   
+
+
+                    if (path === null) {
+                        Debug.writeln("The path to the destination point was not found.");
+                    } else {
+                       
+                        for (var i = 0; i < path.length; i++)
+                        {
+                            Debug.writeln("P: " + i + ", X: " + path[i].x + ", Y: " + path[i].y);
+
+                            if (playerX < path[i].x) {
+
+                                if (this.char.worldPosition.x < playerPositionX + 32) {
+                                    this.char.body.velocity.x = 200;
+                                    go = true;
+                                }
+                                go = false;
+                          
+                               
+                            }
+                        }
+	    	
+                    }
+                });
+
+                this.easyStar.calculate();
+
             }
 
             if (this.followMousePointer) {
@@ -263,11 +304,7 @@ let Player = (function () {
                     }
                
 
-                    Debug.write("charY: ");
-                    Debug.write(Math.abs(Math.trunc(this.char.position.y) - capturedMouseY));
-                    Debug.writeln();
-                    Debug.write("capturedMouseY: ");
-                    Debug.write(capturedMouseY);
+
                     
                 } else {
 
@@ -294,8 +331,7 @@ let Player = (function () {
 
                         this.followMousePointer = false;
 
-                        // moveXDone = true;
-                       // this.char.body.velocity.y = 0;
+                 
                     }
 
                 }

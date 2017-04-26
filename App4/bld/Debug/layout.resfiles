@@ -1,4 +1,6 @@
 assets\jquery.min.js
+assets\phaser_pathfinding-0.2.0.js
+assets\phaser_pathfinding-0.2.0.min.js
 css\default.css
 fonts\nokia16black.png
 fonts\nokia16black.xml

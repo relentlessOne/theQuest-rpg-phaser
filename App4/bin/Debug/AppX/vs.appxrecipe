@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-26T15:10:01.658</Modified>
+      <Modified>2017-04-26T17:10:12.262</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -36,13 +36,21 @@
       <PackagePath>assets\jquery.min.js</PackagePath>
       <Modified>2017-04-26T14:40:40.482</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\assets\phaser_pathfinding-0.2.0.js">
+      <PackagePath>assets\phaser_pathfinding-0.2.0.js</PackagePath>
+      <Modified>2015-07-06T23:19:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\assets\phaser_pathfinding-0.2.0.min.js">
+      <PackagePath>assets\phaser_pathfinding-0.2.0.min.js</PackagePath>
+      <Modified>2017-04-26T17:08:03.567</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\bandit.js">
       <PackagePath>js\bandit.js</PackagePath>
       <Modified>2017-04-26T14:40:40.927</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.js">
       <PackagePath>js\main.js</PackagePath>
-      <Modified>2017-04-26T16:46:53.828</Modified>
+      <Modified>2017-04-26T17:52:41.746</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\phaser.js">
       <PackagePath>js\phaser.js</PackagePath>
@@ -50,7 +58,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player.js">
       <PackagePath>js\player.js</PackagePath>
-      <Modified>2017-04-26T14:40:41.113</Modified>
+      <Modified>2017-04-26T18:14:48.735</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\loadSprites.js">
       <PackagePath>js\loadSprites.js</PackagePath>
@@ -148,7 +156,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2017-04-26T14:40:40.927</Modified>
+      <Modified>2017-04-26T17:10:10.646</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\css\default.css">
       <PackagePath>css\default.css</PackagePath>
@@ -165,7 +173,7 @@
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-26T15:10:01.619</Modified>
+      <Modified>2017-04-26T17:10:12.156</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
