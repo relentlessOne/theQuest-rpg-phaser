@@ -3,17 +3,42 @@
 var player;
 var bandit;
 var mapArr;
+var arrayForAStar;
 
 function preload() {
 
-    game.load.tilemap('world1', 'images/worldMap.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('tile1', 'images/base_out_atlas.png');
-    game.load.image('tile2', 'images/build_atlas.png');
-    game.load.image('tile3', 'images/obj_misk_atlas.png');
-    game.load.image('tile4', 'images/terrain_atlas.png');
-    new LoadSprites(this);
-    new csvToArr("xx");
 
+    var csvArr = new csvToArr();
+
+    game.load.tilemap('world1', 'level_info/worldMap.json', null, Phaser.Tilemap.TILED_JSON);
+    game.load.image('tile1', 'level_info/base_out_atlas.png');
+    game.load.image('tile2', 'level_info/build_atlas.png');
+    game.load.image('tile3', 'level_info/obj_misk_atlas.png');
+    game.load.image('tile4', 'level_info/terrain_atlas.png');
+    new LoadSprites(this);
+
+    setTimeout(() => {
+   
+        arrayForAStar = csvArr.returnParsedData();
+        for (var i = 0; i < 100 ; i++) {
+            for (var j = 0; j < 100 ; j++) {
+                Debug.write(arrayForAStar[i][j] + ",");
+            }
+            Debug.writeln();
+        }
+    }, 1000);
+
+
+  
+
+
+
+    //for (var i = 0; i < 100 ; i++) {
+    //    for (var j = 0; j < 100 ; j++) {
+    //        Debug.write(arrayForAStar.data[i][j] + ",");
+    //    }
+    //    Debug.writeln();
+    //}
 
 
 }
@@ -79,23 +104,12 @@ function updateMarker() {
 function update() {
 
     player.update();
-    //game.physics.arcade.overlap(player, bandit, null, this);
+
 
     game.physics.arcade.collide(player.char, bandit.bandit, collision);
 
     game.physics.arcade.collide(player.char, layer);
     
-   // bandit.bandit.kill();
-    
-    //game.physics.arcade.overlap(player.char, bandit.bandit, collision);
-
-
-    //if (player.char.x < bandit.bandit.x) {
-    //    Debug.writeln(bandit.lookStay.left);
-    //    bandit.bandit.frame = bandit.lookStay.left;
-    //} else if (player.char.x > bandit.bandit.x) {
-    //    bandit.bandit.frame = bandit.lookStay.right;
-    //} 
 
    
 
@@ -115,10 +129,7 @@ function update() {
 
  
 
-    // graphics.lineStyle(2, 0xffd900, 1);
 
-    //graphics.beginFill(0xFF0000, 1);
-    //graphics.drawCircle(bandit.bandit.x, bandit.bandit.y + (bandit.bandit.height/2), 1);
 }
 
 function collision(s1,s2) {
@@ -158,7 +169,7 @@ function collision(s1,s2) {
 }
 
 function render() {
-    game.debug.body(player.char);
+  //  game.debug.body(player.char);
     game.debug.body(bandit.bandit);
 }
 

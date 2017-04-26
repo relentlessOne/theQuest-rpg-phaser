@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>L404-6-DEV</Machine>
-    <WindowsUser>student</WindowsUser>
+    <Machine>DESKTOP-908AUB5</Machine>
+    <WindowsUser>PC</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
@@ -10,119 +10,120 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>53abca5b-231d-47eb-9d6d-b0856cfe650f</PackageIdentityName>
     <PackageIdentityPublisher>CN=PC</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\bld\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bld\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\assets\jquery.min.js">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\assets\jquery.min.js">
       <PackagePath>assets\jquery.min.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\js\bandit.js">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\bandit.js">
       <PackagePath>js\bandit.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\js\main.js">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.js">
       <PackagePath>js\main.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\js\phaser.js">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\phaser.js">
       <PackagePath>js\phaser.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\js\player.js">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player.js">
       <PackagePath>js\player.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\js\loadSprites.js">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\loadSprites.js">
       <PackagePath>js\loadSprites.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\js\csvToArr.js">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\csvToArr.js">
       <PackagePath>js\csvToArr.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.png">
       <PackagePath>fonts\nokia16black.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\base_out_atlas.png">
-      <PackagePath>images\base_out_atlas.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\build_atlas.png">
-      <PackagePath>images\build_atlas.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\character-start.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\character-start.png">
       <PackagePath>images\character-start.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\dark-elf-bandit.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\dark-elf-bandit.png">
       <PackagePath>images\dark-elf-bandit.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\LockScreenLogo.scale-200.png">
       <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\obj_misk_atlas.png">
-      <PackagePath>images\obj_misk_atlas.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\SplashScreen.scale-200.png">
       <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\Square150x150Logo.scale-200.png">
       <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\Square44x44Logo.scale-200.png">
       <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\StoreLogo.png">
       <PackagePath>images\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\terrain_atlas.png">
-      <PackagePath>images\terrain_atlas.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\Wide310x150Logo.scale-200.png">
       <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\wolf-side-howl.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\wolf-side-howl.png">
       <PackagePath>images\wolf-side-howl.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\wolf-side.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\wolf-side.png">
       <PackagePath>images\wolf-side.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\wolfsheet1.png">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\wolfsheet1.png">
       <PackagePath>images\wolfsheet1.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\base_out_atlas.png">
+      <PackagePath>level_info\base_out_atlas.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\build_atlas.png">
+      <PackagePath>level_info\build_atlas.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\obj_misk_atlas.png">
+      <PackagePath>level_info\obj_misk_atlas.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\terrain_atlas.png">
+      <PackagePath>level_info\terrain_atlas.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
       <PackagePath>fonts\nokia16black.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\char.json">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\char.json">
       <PackagePath>images\char.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\images\worldMap.json">
-      <PackagePath>images\worldMap.json</PackagePath>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap.json">
+      <PackagePath>level_info\worldMap.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\index.html">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\css\default.css">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\css\default.css">
       <PackagePath>css\default.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\level_info\kanion.csv">
-      <PackagePath>level_info\kanion.csv</PackagePath>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap_kanion.csv">
+      <PackagePath>level_info\worldMap_kanion.csv</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\sounds\fx_mixdown.mp3">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\sounds\fx_mixdown.mp3">
       <PackagePath>sounds\fx_mixdown.mp3</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\student.CARBON\Desktop\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
