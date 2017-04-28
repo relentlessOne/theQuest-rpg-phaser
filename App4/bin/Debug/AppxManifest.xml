@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="53abca5b-231d-47eb-9d6d-b0856cfe650c" Version="1.0.0.0" Publisher="CN=PC" ProcessorArchitecture="neutral" />
+  <Identity Name="53abca5b-231d-47eb-9d6d-b0856cfe650j" Version="1.0.0.0" Publisher="CN=PC" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="53abca5b-231d-47eb-9d6d-b0856cfe650f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>App4</DisplayName>
@@ -33,9 +33,9 @@
   </Capabilities>
   <build:Metadata>
     <build:Item Name="VisualStudio" Version="14.0" />
-    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2015" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Enterprise 2015" />
     <build:Item Name="OperatingSystem" Version="10.0.14393.0 (rs1_release.160715-1616)" />
-    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25431.1" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25425.1" />
     <build:Item Name="ProjectGUID" Value="53abca5b-231d-47eb-9d6d-b0856cfe650f" />
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="AppHost" />

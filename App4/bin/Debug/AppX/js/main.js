@@ -52,6 +52,11 @@ var layer;
 var marker;
 var blocked = false;
 
+
+var bullets;
+var fireRate = 100;
+var nextFire = 0;
+
 function create() {
     game.physics.startSystem(Phaser.Physics.P2JS);
 
@@ -95,7 +100,13 @@ function create() {
 
  
 
+    bullets = game.add.group();
+    bullets.enableBody = true;
+    bullets.physicsBodyType = Phaser.Physics.ARCADE;
 
+    bullets.createMultiple(50, 'bullet');
+    bullets.setAll('checkWorldBounds', true);
+    bullets.setAll('outOfBoundsKill', true);
 
 
 
@@ -113,15 +124,33 @@ function update() {
 
      player.update();
 
+    //player.char.rotation;
+
+     game.physics.arcade.moveToXY(bandit.bandit, player.char.x, player.char.y,200);
 
 
 
     game.physics.arcade.collide(player.char, bandit.bandit, collision);
 
     game.physics.arcade.collide(player.char, layer);
+
+    game.physics.arcade.collide(bullets, bandit.bandit, enemyKill);
     
 
-   
+    if (game.input.activePointer.isDown) {
+        if (game.time.now > nextFire && bullets.countDead() > 0) {
+            nextFire = game.time.now + fireRate;
+
+            var bullet = bullets.getFirstDead();
+
+            bullet.reset(player.char.x - 8, player.char.y - 8);
+
+            game.physics.arcade.moveToPointer(bullet, 300);
+        }
+    }
+
+
+
 
     var betweenBelow = (player.char.y > bandit.bandit.y) && (player.char.x >= bandit.bandit.x) && (player.char.x <= bandit.bandit.x + bandit.bandit.width);
     var betweenUp = (player.char.y < bandit.bandit.y) && (player.char.x >= bandit.bandit.x) && (player.char.x <= bandit.bandit.x + bandit.bandit.width);
@@ -140,6 +169,12 @@ function update() {
  
 
 
+}
+
+
+function enemyKill(bullet, s2) {
+    Debug.writeln("HIT");
+    s2.destroy();
 }
 
 function collision(s1,s2) {
@@ -179,7 +214,7 @@ function collision(s1,s2) {
 }
 
 function render() {
-  //  game.debug.body(player.char);
+    game.debug.body(player.char);
     game.debug.body(bandit.bandit);
 }
 

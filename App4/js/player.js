@@ -15,6 +15,8 @@ let Player = (function () {
 
     
 
+    let allowMoveTo = false;
+
     let moveYDone;
     let moveXDone;
 
@@ -220,10 +222,10 @@ let Player = (function () {
                 moveYDone = false;
                 moveXDone = false;
       
-                capturedMouseX = (32 * Math.trunc(x/32)) + 16;
-                capturedMouseY = (32 * Math.trunc(y/32)) + 16;
+                capturedMouseX = game.input.activePointer.worldX;
+                capturedMouseY = game.input.activePointer.worldY;
 
-
+                allowMoveTo = true;
                // Debug.writeln(capturedMouseX);
              //   Debug.writeln(capturedMouseY);
       
@@ -235,8 +237,9 @@ let Player = (function () {
                 var playerPositionX = this.char.worldPosition.x;
                 var playerPositionY = this.char.worldPosition.y;
               
-                this.easyStar.findPath(playerX, playerY, 4, 1,  (path) => {
+                this.easyStar.findPath(playerX, playerY, 4, 1, (path) => {
 
+                  
                    
 
 
@@ -250,20 +253,17 @@ let Player = (function () {
 
                             if (playerX < path[i].x) {
 
-                                if (this.char.worldPosition.x < playerPositionX + 32) {
-                                    this.char.body.velocity.x = 200;
-                                    go = true;
-                                }
-                                go = false;
+                                this.char.worldPosition.x = 32;
+                            
                           
                                
                             }
                         }
-	    	
+                        this.followMousePointer = false;
                     }
                 });
 
-                this.easyStar.calculate();
+                //this.easyStar.calculate();
 
             }
 
@@ -336,11 +336,20 @@ let Player = (function () {
 
                 }
 
-  
-        
+            }
 
 
-            } 
+            if (false) {
+      
+                this.game.physics.arcade.moveToXY(this.char, capturedMouseX, capturedMouseY, 200);
+                //var playerPositionX = (32 * Math.trunc(this.char.worldPosition.x / 32)) + 16;
+                //var playerPositionY = (32 * Math.trunc(this.char.worldPosition.y / 32)) + 16;
+
+                if (this.char.worldPosition.x >= capturedMouseX || this.char.worldPosition.y >= capturedMouseY) {
+                    allowMoveTo = false;
+                }
+            }
+
         }
     }
 
