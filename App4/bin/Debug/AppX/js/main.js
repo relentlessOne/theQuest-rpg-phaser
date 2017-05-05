@@ -124,11 +124,7 @@ function update() {
 
      player.update();
 
-    //player.char.rotation;
-
      game.physics.arcade.moveToXY(bandit.bandit, player.char.x, player.char.y,200);
-
-
 
     game.physics.arcade.collide(player.char, bandit.bandit, collision);
 
@@ -148,9 +144,6 @@ function update() {
             game.physics.arcade.moveToPointer(bullet, 300);
         }
     }
-
-
-
 
     var betweenBelow = (player.char.y > bandit.bandit.y) && (player.char.x >= bandit.bandit.x) && (player.char.x <= bandit.bandit.x + bandit.bandit.width);
     var betweenUp = (player.char.y < bandit.bandit.y) && (player.char.x >= bandit.bandit.x) && (player.char.x <= bandit.bandit.x + bandit.bandit.width);
@@ -214,8 +207,8 @@ function collision(s1,s2) {
 }
 
 function render() {
-    game.debug.body(player.char);
-    game.debug.body(bandit.bandit);
+   // game.debug.body(player.char);
+  //    game.debug.body(bandit.bandit);
 }
 
 
