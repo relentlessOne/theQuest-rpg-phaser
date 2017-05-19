@@ -53,12 +53,18 @@ var marker;
 var blocked = false;
 
 var myHealthBar;
+var manaBar;
 var healthBarPrecent = 100;
+var manaBarPrecent = 100;
 var banditAlive = true;
 
 
+var expBar;
+var expBarPrecent = 0;
+
+
 var bullets;
-var fireRate = 100;
+var fireRate = 150;
 var nextFire = 0;
 
 function create() {
@@ -108,12 +114,19 @@ function create() {
     bullets.enableBody = true;
     bullets.physicsBodyType = Phaser.Physics.ARCADE;
 
-    bullets.createMultiple(50, 'bullet');
+    bullets.createMultiple(20, 'bullet');
     bullets.setAll('checkWorldBounds', true);
     bullets.setAll('outOfBoundsKill', true);
 
     myHealthBar = new HealthBar(game, { x: 80, y: 50, width: 120 });
     myHealthBar.setFixedToCamera(true);
+
+    manaBar = new HealthBar(game, { x: 580, y: 50, width: 120 });
+    manaBar.setFixedToCamera(true);
+
+    expBar = new HealthBar(game, { x:380, y: 50, width: 120 });
+    expBar.setFixedToCamera(true);
+    expBar.setPercent(0);
 
 }
 
@@ -124,6 +137,8 @@ function updateMarker() {
 
 }
 
+var allow = true;
+var somethingtimeCheck = 0;
 
 function update() {
 
@@ -141,6 +156,12 @@ function update() {
 
     if (game.input.activePointer.isDown) {
         if (game.time.now > nextFire && bullets.countDead() > 0) {
+
+            manaBarPrecent -= 5;
+
+            if (manaBarPrecent <= 0) manaBarPrecent = 0;
+            manaBar.setPercent(manaBarPrecent);
+
             nextFire = game.time.now + fireRate;
 
             var bullet = bullets.getFirstDead();
@@ -165,7 +186,21 @@ function update() {
         bandit.bandit.frame = bandit.lookStay.right;
     }
 
- 
+    if (manaBarPrecent < 100 && allow) {
+        allow = false;
+        somethingtimeCheck = game.time.now;
+
+        manaBarPrecent += 5;
+        manaBar.setPercent(manaBarPrecent);
+        bullets.createMultiple(1, 'bullet');
+        setTimeout(function () {
+            allow = true;
+        }, 1000);
+
+    }
+
+
+   
 
     if (healthBarPrecent <= 0) {
         player.char.kill();
@@ -177,6 +212,7 @@ function enemyKill(s1, s2) {
     banditAlive = false;
     setTimeout(function () {
         s1.destroy();
+        expBar.setPercent(30);
     }, 100);
 
     s2.destroy();
