@@ -52,6 +52,10 @@ var layer;
 var marker;
 var blocked = false;
 
+var myHealthBar;
+var healthBarPrecent = 100;
+var banditAlive = true;
+
 
 var bullets;
 var fireRate = 100;
@@ -108,7 +112,8 @@ function create() {
     bullets.setAll('checkWorldBounds', true);
     bullets.setAll('outOfBoundsKill', true);
 
-
+    myHealthBar = new HealthBar(game, { x: 80, y: 50, width: 120 });
+    myHealthBar.setFixedToCamera(true);
 
 }
 
@@ -124,7 +129,8 @@ function update() {
 
      player.update();
 
-     game.physics.arcade.moveToXY(bandit.bandit, player.char.x, player.char.y,200);
+     if (banditAlive)
+     game.physics.arcade.moveToXY(bandit.bandit, player.char.x, player.char.y,150);
 
     game.physics.arcade.collide(player.char, bandit.bandit, collision);
 
@@ -161,19 +167,24 @@ function update() {
 
  
 
-
+    if (healthBarPrecent <= 0) {
+        player.char.kill();
+    }
 }
 
 
-function enemyKill(bullet, s2) {
-    Debug.writeln("HIT");
+function enemyKill(s1, s2) {
+    banditAlive = false;
+
+    s1.destroy();
     s2.destroy();
 }
 
 function collision(s1,s2) {
 
     Debug.writeln(player.direction);
-
+    healthBarPrecent -= 1;
+    myHealthBar.setPercent(healthBarPrecent);
 
     player.allowMove = false;
     player.followMousePointer = false;

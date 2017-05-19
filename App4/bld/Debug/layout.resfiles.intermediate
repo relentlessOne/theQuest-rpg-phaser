@@ -1,4 +1,51 @@
 assets\jquery.min.js
+assets\phaser.healthbar - Copy\.git\config
+assets\phaser.healthbar - Copy\.git\description
+assets\phaser.healthbar - Copy\.git\HEAD
+assets\phaser.healthbar - Copy\.git\hooks\applypatch-msg.sample
+assets\phaser.healthbar - Copy\.git\hooks\commit-msg.sample
+assets\phaser.healthbar - Copy\.git\hooks\post-update.sample
+assets\phaser.healthbar - Copy\.git\hooks\pre-applypatch.sample
+assets\phaser.healthbar - Copy\.git\hooks\pre-commit.sample
+assets\phaser.healthbar - Copy\.git\hooks\prepare-commit-msg.sample
+assets\phaser.healthbar - Copy\.git\hooks\pre-push.sample
+assets\phaser.healthbar - Copy\.git\hooks\pre-rebase.sample
+assets\phaser.healthbar - Copy\.git\hooks\pre-receive.sample
+assets\phaser.healthbar - Copy\.git\hooks\update.sample
+assets\phaser.healthbar - Copy\.git\index
+assets\phaser.healthbar - Copy\.git\info\exclude
+assets\phaser.healthbar - Copy\.git\logs\HEAD
+assets\phaser.healthbar - Copy\.git\logs\refs\heads\master
+assets\phaser.healthbar - Copy\.git\logs\refs\remotes\origin\HEAD
+assets\phaser.healthbar - Copy\.git\objects\pack\pack-f644b7694278448bc1d54afcc674f4f673eab8fd.idx
+assets\phaser.healthbar - Copy\.git\objects\pack\pack-f644b7694278448bc1d54afcc674f4f673eab8fd.pack
+assets\phaser.healthbar - Copy\.git\packed-refs
+assets\phaser.healthbar - Copy\.git\refs\heads\master
+assets\phaser.healthbar - Copy\.git\refs\remotes\origin\HEAD
+assets\phaser.healthbar - Copy\.gitignore
+assets\phaser.healthbar - Copy\example\.bowerrc
+assets\phaser.healthbar - Copy\example\.editorconfig
+assets\phaser.healthbar - Copy\example\.jshintrc
+assets\phaser.healthbar - Copy\example\assets\plus_minus.png
+assets\phaser.healthbar - Copy\example\bower.json
+assets\phaser.healthbar - Copy\example\config.json
+assets\phaser.healthbar - Copy\example\dist\assets\plus_minus.png
+assets\phaser.healthbar - Copy\example\dist\css\styles.css
+assets\phaser.healthbar - Copy\example\dist\index.html
+assets\phaser.healthbar - Copy\example\dist\js\game.js
+assets\phaser.healthbar - Copy\example\dist\js\phaser.js
+assets\phaser.healthbar - Copy\example\dist\js\phaser.min.js
+assets\phaser.healthbar - Copy\example\game\main.js
+assets\phaser.healthbar - Copy\example\game\prefabs\HealthBar.js
+assets\phaser.healthbar - Copy\example\game\states\play.js
+assets\phaser.healthbar - Copy\example\Gruntfile.js
+assets\phaser.healthbar - Copy\example\index.html
+assets\phaser.healthbar - Copy\example\package.json
+assets\phaser.healthbar - Copy\example\templates\_main.js.tpl
+assets\phaser.healthbar - Copy\HealthBar.js
+assets\phaser.healthbar - Copy\HealthBar.standalone.js
+assets\phaser.healthbar - Copy\phaser.healthbar.config.png
+assets\phaser.healthbar - Copy\README.md
 assets\phaser_pathfinding-0.2.0.js
 assets\phaser_pathfinding-0.2.0.min.js
 css\default.css
