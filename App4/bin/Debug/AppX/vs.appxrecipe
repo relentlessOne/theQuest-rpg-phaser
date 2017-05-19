@@ -86,7 +86,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\js\main.js">
       <PackagePath>js\main.js</PackagePath>
-      <Modified>2017-05-19T08:50:16.698</Modified>
+      <Modified>2017-05-19T09:00:16.133</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\js\phaser.js">
       <PackagePath>js\phaser.js</PackagePath>
@@ -122,7 +122,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\assets\phaser.healthbar - Copy\.git\index">
       <PackagePath>assets\phaser.healthbar - Copy\.git\index</PackagePath>
-      <Modified>2017-05-19T08:30:42.957</Modified>
+      <Modified>2017-05-19T08:53:49.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\Desktop\theQuest-rpg-phaser\App4\assets\phaser.healthbar - Copy\.git\info\exclude">
       <PackagePath>assets\phaser.healthbar - Copy\.git\info\exclude</PackagePath>

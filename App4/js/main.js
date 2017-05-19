@@ -175,8 +175,10 @@ function update() {
 
 function enemyKill(s1, s2) {
     banditAlive = false;
+    setTimeout(function () {
+        s1.destroy();
+    }, 100);
 
-    s1.destroy();
     s2.destroy();
 }
 
