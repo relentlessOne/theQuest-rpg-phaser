@@ -3,6 +3,7 @@ fonts\nokia16black.png
 fonts\nokia16black.xml
 images\char.json
 images\character-start.png
+images\d8d47af9059b6b3f12e47ea6014c966d.png
 images\dark-elf-bandit.png
 images\LockScreenLogo.scale-200.png
 images\SplashScreen.scale-200.png
@@ -28,8 +29,11 @@ level_info\obj_misk_atlas.png
 level_info\terrain_atlas.png
 level_info\worldMap.json
 level_info\worldMap_kanion.csv
+libs\bootstrap.min.css
+libs\firebase.js
 libs\jquery.min.js
 libs\phaser.min.js
 libs\phaserHealthbar.min.js
 libs\vue2.min.js
+libs\vueResources.js
 sounds\fx_mixdown.mp3

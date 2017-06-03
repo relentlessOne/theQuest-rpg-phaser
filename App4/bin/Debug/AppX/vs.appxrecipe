@@ -28,53 +28,13 @@
     <AppXManifest Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-03T14:06:03.690</Modified>
+      <Modified>2017-06-03T17:55:37.658</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\modal.menu.js">
-      <PackagePath>js\modal.menu.js</PackagePath>
-      <Modified>2017-06-03T14:07:00.575</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\jquery.min.js">
-      <PackagePath>libs\jquery.min.js</PackagePath>
-      <Modified>2017-06-03T13:07:29.349</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\phaserHealthbar.min.js">
-      <PackagePath>libs\phaserHealthbar.min.js</PackagePath>
-      <Modified>2017-06-03T13:09:26.791</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\phaser.min.js">
-      <PackagePath>libs\phaser.min.js</PackagePath>
-      <Modified>2017-06-03T13:07:29.324</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vue2.min.js">
-      <PackagePath>libs\vue2.min.js</PackagePath>
-      <Modified>2017-06-03T13:07:29.394</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\bandit.js">
-      <PackagePath>js\bandit.js</PackagePath>
-      <Modified>2017-06-03T12:47:57.023</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.js">
-      <PackagePath>js\main.js</PackagePath>
-      <Modified>2017-06-03T13:18:16.982</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player.js">
-      <PackagePath>js\player.js</PackagePath>
-      <Modified>2017-06-03T12:47:57.198</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\loadSprites.js">
-      <PackagePath>js\loadSprites.js</PackagePath>
-      <Modified>2017-06-03T12:47:57.024</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\csvToArr.js">
-      <PackagePath>js\csvToArr.js</PackagePath>
-      <Modified>2017-06-03T12:47:57.023</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.menu.vue.js">
-      <PackagePath>js\main.menu.vue.js</PackagePath>
-      <Modified>2017-06-03T12:57:31.539</Modified>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\d8d47af9059b6b3f12e47ea6014c966d.png">
+      <PackagePath>images\d8d47af9059b6b3f12e47ea6014c966d.png</PackagePath>
+      <Modified>2017-06-03T14:21:10.135</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.png">
       <PackagePath>fonts\nokia16black.png</PackagePath>
@@ -150,6 +110,66 @@
       <PackagePath>level_info\terrain_atlas.png</PackagePath>
       <Modified>2017-06-03T12:47:57.209</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\modal.menu.js">
+      <PackagePath>js\modal.menu.js</PackagePath>
+      <Modified>2017-06-03T17:08:56.898</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\firebase.js">
+      <PackagePath>libs\firebase.js</PackagePath>
+      <Modified>2017-06-03T17:55:37.078</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\jquery.min.js">
+      <PackagePath>libs\jquery.min.js</PackagePath>
+      <Modified>2017-06-03T13:07:29.349</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\phaserHealthbar.min.js">
+      <PackagePath>libs\phaserHealthbar.min.js</PackagePath>
+      <Modified>2017-06-03T13:09:26.791</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\phaser.min.js">
+      <PackagePath>libs\phaser.min.js</PackagePath>
+      <Modified>2017-06-03T13:07:29.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vue2.min.js">
+      <PackagePath>libs\vue2.min.js</PackagePath>
+      <Modified>2017-06-03T13:07:29.394</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\bandit.js">
+      <PackagePath>js\bandit.js</PackagePath>
+      <Modified>2017-06-03T12:47:57.023</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.js">
+      <PackagePath>js\main.js</PackagePath>
+      <Modified>2017-06-03T13:18:16.982</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player.js">
+      <PackagePath>js\player.js</PackagePath>
+      <Modified>2017-06-03T12:47:57.198</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\loadSprites.js">
+      <PackagePath>js\loadSprites.js</PackagePath>
+      <Modified>2017-06-03T12:47:57.024</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\csvToArr.js">
+      <PackagePath>js\csvToArr.js</PackagePath>
+      <Modified>2017-06-03T12:47:57.023</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.menu.vue.js">
+      <PackagePath>js\main.menu.vue.js</PackagePath>
+      <Modified>2017-06-03T18:49:57.317</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vueResources.js">
+      <PackagePath>libs\vueResources.js</PackagePath>
+      <Modified>2017-06-03T17:46:16.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\bootstrap.min.css">
+      <PackagePath>libs\bootstrap.min.css</PackagePath>
+      <Modified>2017-06-03T14:24:34.251</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2017-06-03T18:49:18.195</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
       <PackagePath>fonts\nokia16black.xml</PackagePath>
       <Modified>2017-06-03T12:47:56.989</Modified>
@@ -164,11 +184,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2017-06-03T14:06:28.661</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\css\default.css">
-      <PackagePath>css\default.css</PackagePath>
-      <Modified>2017-06-03T14:07:27.094</Modified>
+      <Modified>2017-06-03T18:47:57.379</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap_kanion.csv">
       <PackagePath>level_info\worldMap_kanion.csv</PackagePath>
@@ -181,7 +197,7 @@
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-03T14:06:03.544</Modified>
+      <Modified>2017-06-03T17:55:37.551</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

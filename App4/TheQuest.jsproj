@@ -58,7 +58,10 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="images\d8d47af9059b6b3f12e47ea6014c966d.png" />
     <Content Include="js\modal.menu.js" />
+    <Content Include="libs\bootstrap.min.css" />
+    <Content Include="libs\firebase.js" />
     <Content Include="libs\jquery.min.js" />
     <Content Include="libs\phaserHealthbar.min.js" />
     <Content Include="libs\phaser.min.js" />
@@ -92,6 +95,7 @@
     <Content Include="level_info\terrain_atlas.png" />
     <Content Include="level_info\worldMap.json" />
     <Content Include="level_info\worldMap_kanion.csv" />
+    <Content Include="libs\vueResources.js" />
     <Content Include="sounds\fx_mixdown.mp3" />
     <None Include="App4_TemporaryKey.pfx" />
   </ItemGroup>
