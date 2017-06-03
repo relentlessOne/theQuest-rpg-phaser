@@ -1,4 +1,4 @@
-﻿var game = new Phaser.Game(1024, 760, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+﻿//var game = new Phaser.Game(1024, 760, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
 
 var player;
 var bandit;
@@ -12,7 +12,7 @@ var h = 760;
 function preload() {
 
     var csvArr = new csvToArr();
-    easystar = new EasyStar.js();
+ 
 
     game.load.tilemap('world1', 'level_info/worldMap.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tile1', 'level_info/base_out_atlas.png');
@@ -27,8 +27,7 @@ function preload() {
 
         // pathfinder = game.plugins.add(Phaser.Plugin.PathFinderPlugin);
    
-        easystar.setGrid(arrayForAStar);
-        easystar.setAcceptableTiles([-1]);
+
 
       
 

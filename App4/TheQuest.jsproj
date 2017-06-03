@@ -58,56 +58,11 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="assets\jquery.min.js" />
-    <Content Include="assets\phaser.healthbar - Copy\.gitignore" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\config" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\description" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\HEAD" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\applypatch-msg.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\commit-msg.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\post-update.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\pre-applypatch.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\pre-commit.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\pre-push.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\pre-rebase.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\pre-receive.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\prepare-commit-msg.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\hooks\update.sample" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\index" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\info\exclude" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\logs\HEAD" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\logs\refs\heads\master" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\logs\refs\remotes\origin\HEAD" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\objects\pack\pack-f644b7694278448bc1d54afcc674f4f673eab8fd.idx" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\objects\pack\pack-f644b7694278448bc1d54afcc674f4f673eab8fd.pack" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\packed-refs" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\refs\heads\master" />
-    <Content Include="assets\phaser.healthbar - Copy\.git\refs\remotes\origin\HEAD" />
-    <Content Include="assets\phaser.healthbar - Copy\example\.bowerrc" />
-    <Content Include="assets\phaser.healthbar - Copy\example\.editorconfig" />
-    <Content Include="assets\phaser.healthbar - Copy\example\.jshintrc" />
-    <Content Include="assets\phaser.healthbar - Copy\example\assets\plus_minus.png" />
-    <Content Include="assets\phaser.healthbar - Copy\example\bower.json" />
-    <Content Include="assets\phaser.healthbar - Copy\example\config.json" />
-    <Content Include="assets\phaser.healthbar - Copy\example\dist\assets\plus_minus.png" />
-    <Content Include="assets\phaser.healthbar - Copy\example\dist\css\styles.css" />
-    <Content Include="assets\phaser.healthbar - Copy\example\dist\index.html" />
-    <Content Include="assets\phaser.healthbar - Copy\example\dist\js\game.js" />
-    <Content Include="assets\phaser.healthbar - Copy\example\dist\js\phaser.js" />
-    <Content Include="assets\phaser.healthbar - Copy\example\dist\js\phaser.min.js" />
-    <Content Include="assets\phaser.healthbar - Copy\example\game\main.js" />
-    <Content Include="assets\phaser.healthbar - Copy\example\game\prefabs\HealthBar.js" />
-    <Content Include="assets\phaser.healthbar - Copy\example\game\states\play.js" />
-    <Content Include="assets\phaser.healthbar - Copy\example\Gruntfile.js" />
-    <Content Include="assets\phaser.healthbar - Copy\example\index.html" />
-    <Content Include="assets\phaser.healthbar - Copy\example\package.json" />
-    <Content Include="assets\phaser.healthbar - Copy\example\templates\_main.js.tpl" />
-    <Content Include="assets\phaser.healthbar - Copy\HealthBar.js" />
-    <Content Include="assets\phaser.healthbar - Copy\HealthBar.standalone.js" />
-    <Content Include="assets\phaser.healthbar - Copy\phaser.healthbar.config.png" />
-    <Content Include="assets\phaser.healthbar - Copy\README.md" />
-    <Content Include="assets\phaser_pathfinding-0.2.0.js" />
-    <Content Include="assets\phaser_pathfinding-0.2.0.min.js" />
+    <Content Include="js\modal.menu.js" />
+    <Content Include="libs\jquery.min.js" />
+    <Content Include="libs\phaserHealthbar.min.js" />
+    <Content Include="libs\phaser.min.js" />
+    <Content Include="libs\vue2.min.js" />
     <Content Include="fonts\nokia16black.png" />
     <Content Include="fonts\nokia16black.xml" />
     <Content Include="images\char.json" />
@@ -127,10 +82,10 @@
     <Content Include="js\bandit.js" />
     <Content Include="js\main.js" />
     <Content Include="css\default.css" />
-    <Content Include="js\phaser.js" />
     <Content Include="js\player.js" />
     <Content Include="js\loadSprites.js" />
     <Content Include="js\csvToArr.js" />
+    <Content Include="js\main.menu.vue.js" />
     <Content Include="level_info\base_out_atlas.png" />
     <Content Include="level_info\build_atlas.png" />
     <Content Include="level_info\obj_misk_atlas.png" />
@@ -139,10 +94,6 @@
     <Content Include="level_info\worldMap_kanion.csv" />
     <Content Include="sounds\fx_mixdown.mp3" />
     <None Include="App4_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\phaser.healthbar - Copy\.git\objects\info\" />
-    <Folder Include="assets\phaser.healthbar - Copy\.git\refs\tags\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

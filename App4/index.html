@@ -5,17 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <title>BlankAppJS</title>
     <link href="css/default.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/phaser.js"></script>
-
+    <script type="text/javascript" src="libs/phaser.min.js"></script>
+    <script type="text/javascript" src="libs/vue2.min.js"></script>
+    <script type="text/javascript" src="libs/phaserHealthbar.min.js"></script>
+    <script type="text/javascript" src="libs/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
 </head>
 <body>
-    <script src="assets/jquery.min.js"></script>
-    <script src="assets/phaser_pathfinding-0.2.0.js"></script>
+
+
+
+
+    <div id="myModal" class="modal">
+
+     
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+    <div id="app">      
+
+        <h1>THE QUEST</h1>
+        
+            <button class="button button--lvl1">
+                <span class="button__inner">Level 1</span>
+            </button>
+
+            <button class="button button--lvl2">
+                <span class="button__inner">Level 2</span>
+            </button>
+
+        <button class="button button--boss">
+            <span class="button__inner">Boss</span>
+        </button>
+
+    </div>
+    <script src="js/modal.menu.js"></script>
+    <script src="js/main.menu.vue.js"></script>
     <script src="js/loadSprites.js"></script>
     <script src="js/player.js"></script>
     <script src="js/bandit.js"></script>
     <script src="js/csvToArr.js"></script>
     <script src="js/main.js"></script>
-    <script src="assets/phaser.healthbar - Copy/HealthBar.standalone.js"></script>
+
 </body>
 </html>
