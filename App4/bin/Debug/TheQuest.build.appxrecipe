@@ -22,8 +22,14 @@
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\Antu_media-playback-pause.svg.png">
+      <PackagePath>images\Antu_media-playback-pause.svg.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\d8d47af9059b6b3f12e47ea6014c966d.png">
       <PackagePath>images\d8d47af9059b6b3f12e47ea6014c966d.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\pause-button-png-6.png">
+      <PackagePath>images\pause-button-png-6.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.png">
       <PackagePath>fonts\nokia16black.png</PackagePath>

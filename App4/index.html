@@ -42,7 +42,10 @@
                 Back to menu
             </p>
         </div>
-        <h1 id="title" >THE QUEST</h1>
+        <div v-on:click="pauseClick()" id="pause" class="pause-btn">
+            <p id="pausetxt"></p>
+        </div>
+        <h1 id="title">THE QUEST</h1>
         <div id="buttons">
             <button v-on:click="lvl1Click()" class="button button--lvl1">
                 <span class="button__inner">Level 1</span>
@@ -55,6 +58,11 @@
             </button>
         </div>
         <div id="phaser-view"></div>
+        <div id="modalpause" ref="modal" class="modal-pause">
+            <div class="modal-content-pause">
+                <img src="images/Antu_media-playback-pause.svg.png" height="150px" width="150px"  style="margin-bottom:50px;user-select: none;" id="pauseImg" alt="" />
+            </div>
+        </div>
     </div>
     <script src="js/modal.menu.js"></script>
     <script src="js/main.menu.vue.js"></script>

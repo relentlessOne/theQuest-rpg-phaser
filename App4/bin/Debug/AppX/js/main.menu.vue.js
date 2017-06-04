@@ -19,9 +19,12 @@ let vm = new Vue({
     },
     created: function () {
         let modal = document.getElementById('modal');
-        modal.style.display = "block";
-        let buttons = document.getElementById('buttons');
+        let modalpause = document.getElementById('modalpause');
+       // modal.style.display = "block";
+        let buttons = document.getElementById('buttons'); pause
+        let pause = document.getElementById('pause');
         let title = document.getElementById('title');
+        let pausetxt = document.getElementById('pausetxt');
         let backMenu = document.getElementById('backMenu');
         let currentLvl = {};
 
@@ -79,6 +82,8 @@ let vm = new Vue({
             buttons.className = 'fadeOut';
             title.className = 'moveUp';
             backMenu.className = 'back-to-menu showBackMenu';
+            pause.className = 'pause-btn showBackMenu';
+            pausetxt.innerText = "Pause";
             setTimeout(function () {
                 currentLvl = new Lvl1();
             }, 1200);
@@ -89,6 +94,18 @@ let vm = new Vue({
             buttons.className = 'showButtons';
             title.className = ' downTitle'
             backMenu.className = 'back-to-menu backHide';
+            pause.className = 'pause-btn backHide';
+        },
+        pauseClick: function () {
+            if (pausetxt.innerText === 'Pause') {
+                pausetxt.innerText = 'Unpause';
+                currentLvl.pauseGame();
+                modalpause.style.display = "block";
+            } else {
+                pausetxt.innerText = 'Pause';
+                modalpause.style.display = "none";
+                currentLvl.unpauseGame();
+            }
         }
     }
 });
