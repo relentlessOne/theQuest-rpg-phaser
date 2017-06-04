@@ -19,7 +19,7 @@ index.html
 js\bandit.js
 js\csvToArr.js
 js\loadSprites.js
-js\main.js
+js\lvl1.game.js
 js\main.menu.vue.js
 js\modal.menu.js
 js\player.js

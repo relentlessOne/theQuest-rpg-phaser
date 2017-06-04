@@ -31,9 +31,8 @@ let Player = (function () {
 
     class Player {
 
-        constructor(rpg, easyStar) {
-            this.game = rpg;
-            this.easyStar = easyStar;
+        constructor(game) {
+            this.game = game;
             this.char = this.game.add.sprite(32, 32, 'char-start');
             this.game.physics.enable(this.char, Phaser.Physics.ARCADE);
             this.char.body.collideWorldBounds = true;
@@ -44,10 +43,10 @@ let Player = (function () {
             this.followMousePointer = false;
             this.direction = '';
             this.disableClick = false;
-            key_W = game.input.keyboard.addKey(Phaser.Keyboard.W);
-            key_S = game.input.keyboard.addKey(Phaser.Keyboard.S);
-            key_A = game.input.keyboard.addKey(Phaser.Keyboard.A);
-            key_D = game.input.keyboard.addKey(Phaser.Keyboard.D);
+            key_W = this.game.input.keyboard.addKey(Phaser.Keyboard.W);
+            key_S = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
+            key_A = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
+            key_D = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
             this.game.input.keyboard.addCallbacks(this.game, this.chuj, null, null);
             this.allowMove = true;
         }

@@ -15,11 +15,15 @@ let vm = new Vue({
         error: '',
         email: '',
         password: '',
-        user:{}
+        user: {}
     },
     created: function () {
         let modal = document.getElementById('modal');
         modal.style.display = "block";
+        let buttons = document.getElementById('buttons');
+        let title = document.getElementById('title');
+        let backMenu = document.getElementById('backMenu');
+        let currentLvl = {};
 
     },
     methods: {
@@ -70,6 +74,21 @@ let vm = new Vue({
         },
         loadUserData: function () {
 
+        },
+        lvl1Click: function () {
+            buttons.className = 'fadeOut';
+            title.className = 'moveUp';
+            backMenu.className = 'back-to-menu showBackMenu';
+            setTimeout(function () {
+                currentLvl = new Lvl1();
+            }, 1200);
+          
+        },
+        backMenuClick: function () {
+            currentLvl.endLevel();
+            buttons.className = 'showButtons';
+            title.className = ' downTitle'
+            backMenu.className = 'back-to-menu backHide';
         }
     }
 });

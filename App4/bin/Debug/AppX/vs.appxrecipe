@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>33D6344CA69E81BCD62AC77D7D9295C3BEAF03D64140F9F083A16E07745C94E3</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7A04C0F2D7EB499D01FFE4E4ED2D8F92A60FEA9C5A4F2FBFAA0E720DFED77D25</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>53abca5b-231d-47eb-9d6d-b0856cfe650j_1.0.0.0_neutral__6ekdg42zp5p5j</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>53abca5b-231d-47eb-9d6d-b0856cfe650j_6ekdg42zp5p5j!App</RegisteredUserModeAppID>
     <RegisteredPackageID>53abca5b-231d-47eb-9d6d-b0856cfe650j</RegisteredPackageID>
@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-03T17:55:37.658</Modified>
+      <Modified>2017-06-04T11:17:48.696</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -138,13 +138,13 @@
       <PackagePath>js\bandit.js</PackagePath>
       <Modified>2017-06-03T12:47:57.023</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.js">
-      <PackagePath>js\main.js</PackagePath>
-      <Modified>2017-06-03T13:18:16.982</Modified>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\lvl1.game.js">
+      <PackagePath>js\lvl1.game.js</PackagePath>
+      <Modified>2017-06-04T11:30:18.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player.js">
       <PackagePath>js\player.js</PackagePath>
-      <Modified>2017-06-03T12:47:57.198</Modified>
+      <Modified>2017-06-04T10:27:27.536</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\loadSprites.js">
       <PackagePath>js\loadSprites.js</PackagePath>
@@ -156,7 +156,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.menu.vue.js">
       <PackagePath>js\main.menu.vue.js</PackagePath>
-      <Modified>2017-06-03T18:49:57.317</Modified>
+      <Modified>2017-06-04T12:08:06.076</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vueResources.js">
       <PackagePath>libs\vueResources.js</PackagePath>
@@ -168,7 +168,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2017-06-03T18:49:18.195</Modified>
+      <Modified>2017-06-04T12:05:32.321</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
       <PackagePath>fonts\nokia16black.xml</PackagePath>
@@ -184,7 +184,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2017-06-03T18:47:57.379</Modified>
+      <Modified>2017-06-04T11:31:42.399</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap_kanion.csv">
       <PackagePath>level_info\worldMap_kanion.csv</PackagePath>
@@ -197,7 +197,7 @@
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-03T17:55:37.551</Modified>
+      <Modified>2017-06-04T11:17:48.590</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

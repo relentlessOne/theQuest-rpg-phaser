@@ -15,8 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
 </head>
 <body>
-
-
     <div id="gameMenu">
         <div id="user-name-animate" class="user-name">
             <p>
@@ -28,21 +26,25 @@
                 <img src="images/d8d47af9059b6b3f12e47ea6014c966d.png" alt="" height="100px" width="auto" />
                 <div class="form-group">
                     <label for="usr">E-mail:</label>
-                    <input  v-model="email" type="text" class="form-control" id="usr">
+                    <input v-model="email" type="text" class="form-control" id="usr">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input  v-model="password" type="password" class="form-control" id="pwd">
+                    <input v-model="password" type="password" class="form-control" id="pwd">
                 </div>
                 <button v-on:click="login()" type="button" class="btn btn-primary btn-block">Login</button>
                 <button v-on:click="register()" type="button" class="btn btn-primary btn-block">Register</button>
                 <p style="color:red;font-weight:bold;font-size:20px" v-html="error"></p>
             </div>
         </div>
-
-        <div>
-            <h1>THE QUEST</h1>
-            <button class="button button--lvl1">
+        <div v-on:click="backMenuClick()" id="backMenu" class="back-to-menu">
+            <p>
+                Back to menu
+            </p>
+        </div>
+        <h1 id="title" >THE QUEST</h1>
+        <div id="buttons">
+            <button v-on:click="lvl1Click()" class="button button--lvl1">
                 <span class="button__inner">Level 1</span>
             </button>
             <button class="button button--lvl2">
@@ -52,14 +54,14 @@
                 <span class="button__inner">Boss</span>
             </button>
         </div>
+        <div id="phaser-view"></div>
     </div>
-
     <script src="js/modal.menu.js"></script>
     <script src="js/main.menu.vue.js"></script>
     <script src="js/loadSprites.js"></script>
     <script src="js/player.js"></script>
     <script src="js/bandit.js"></script>
     <script src="js/csvToArr.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/lvl1.game.js"></script>
 </body>
 </html>

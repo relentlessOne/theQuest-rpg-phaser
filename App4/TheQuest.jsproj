@@ -83,7 +83,7 @@
     <Content Include="images\wolfsheet1.png" />
     <Content Include="index.html" />
     <Content Include="js\bandit.js" />
-    <Content Include="js\main.js" />
+    <Content Include="js\lvl1.game.js" />
     <Content Include="css\default.css" />
     <Content Include="js\player.js" />
     <Content Include="js\loadSprites.js" />
