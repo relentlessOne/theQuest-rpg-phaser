@@ -11,7 +11,7 @@
     let blocked = false;
     let myHealthBar;
     let manaBar;
-    let healthBarPrecent = 100;
+    let healthBarPrecent;
     let manaBarPrecent = 100;
     let banditAlive = true;
     let expBar;
@@ -24,10 +24,22 @@
     let pause_label;
     let menu;
     let choiseLabel;
+    let enemies;
+    let vm;
+    let evt;
+    let evt1;
+    let numOfEnemiesKilled;
 
     class Lvl1 {
         constructor() {
             game = new Phaser.Game(w, h, Phaser.AUTO, 'phaser-view', { preload: this.preload, create: this.create, update: this.update });
+            vm = this;
+            enemies = [];
+            evt = new CustomEvent('playerDead');
+            evt1 = new CustomEvent('levelCompleted');
+            healthBarPrecent = 100;
+            numOfEnemiesKilled = 0;
+      
         }
 
         preload() {
@@ -46,37 +58,33 @@
         create() {
             game.physics.startSystem(Phaser.Physics.P2JS);
             map = game.add.tilemap('world1');
-
-            //  The first parameter is the tileset name, as specified in the Tiled map editor (and in the tilemap json file)
-            //  The second parameter maps this name to the Phaser.Cache key 'tiles'
             map.addTilesetImage('base_out_atlas', 'tile1');
             map.addTilesetImage('terrain_atlas', 'tile4');
             map.addTilesetImage('build_atlas', 'tile2');
             map.addTilesetImage('obj_misk_atlas', 'tile3');
-
-            //  Creates a layer from the World1 layer in the map data.
-            //  A Layer is effectively like a Phaser.Sprite, so is added to the display list.
             layer = map.createLayer('Trawa-drogi');
             layer = map.createLayer('kanion');
-            // layer = map.createLayer('Warstwa Kafelków 3');
+  
             player = new Player(game);
 
-            bandit = new Bandit(game);
+            bandit = new Bandit(game, 0, 0);
 
-            // game.physics.arcade.collide(player.char, 'kanion');
+
+            for (let i = 0; i < 5 ; i++) {
+                enemies.push(new Bandit(game, Math.floor((Math.random() * 2650) + 200), Math.floor((Math.random() * 600) + 200)));
+            }
+
+
+            //for (let i = 0; i < 30 ; i++) {
+            //    enemies.push(new Bandit(game, Math.floor((Math.random() * 2650) + 1000), Math.floor((Math.random() * 2550) + 600)));
+            //}
+
+
             map.setCollisionBetween(1, 10000, true, 'kanion');
-            //  This resizes the game world to match the layer dimensions
+
             layer.resizeWorld();
 
             game.camera.follow(player.char, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
-//bug
-            //marker = game.add.graphics();
-            //marker.lineStyle(2, 0xffffff, 1);
-            //marker.drawRect(0, 0, 32, 32);
-
-            //game.input.addMoveCallback(this.updateMarker, game);
-
-
 
             bullets = game.add.group();
             bullets.enableBody = true;
@@ -86,28 +94,35 @@
             bullets.setAll('checkWorldBounds', true);
             bullets.setAll('outOfBoundsKill', true);
 
-            myHealthBar = new HealthBar(game, { x: 80, y: 50, width: 120 });
+            myHealthBar = new HealthBar(game, {
+                x: 80, y: 50, width: 120, bar: {
+                    color: '#ff0000'
+                },
+                animationDuration: 1
+            });
             myHealthBar.setFixedToCamera(true);
 
-            manaBar = new HealthBar(game, { x: 850, y: 50, width: 120 });
-            manaBar.setFixedToCamera(true);
 
-            expBar = new HealthBar(game, { x: 450, y: 50, width: 120 });
+            game.add.text(60, 32, "HP", { font: "32px Arial", fill: "#ffffff", align: "center" }).fixedToCamera = true;
+       
+
+
+            manaBar = new HealthBar(game, {
+                x: 950, y: 50, width: 120, bar: {
+                    color: '#0000ff'
+                },
+                bg: {
+                    color: '#000099'
+                }
+            });
+            manaBar.setFixedToCamera(true);
+            game.add.text(925, 32, "MP", { font: "32px Arial", fill: "#ffffff", align: "center" }).fixedToCamera = true;
+
+
+            expBar = new HealthBar(game, { x: 500, y: 50, width: 120 });
             expBar.setFixedToCamera(true);
             expBar.setPercent(0);
-
-
-
-
-            // Create a label to use as a button
-            pause_label = game.add.text(w - 100, 20, 'Pause', { font: '24px Arial', fill: '#fff' });
-            pause_label.inputEnabled = true;
-
-            pause_label.events.onInputUp.add( () => {
-             
-            });
-
-          
+            game.add.text(470, 32, "EXP", { font: "32px Arial", fill: "#ffffff", align: "center" }).fixedToCamera = true;
 
         }
 
@@ -119,25 +134,17 @@
             game.paused = false;
         }
 
-        updateMarker() {
-
-            //marker.x = layer.getTileX(game.input.activePointer.worldX) * 32;
-            //marker.y = layer.getTileY(game.input.activePointer.worldY) * 32;
-
-        }
+   
         update() {
 
-            player.update();
+            Debug.writeln(numOfEnemiesKilled);
+            if (numOfEnemiesKilled === 5) {
+                window.dispatchEvent(evt1);
+            }
 
-            if (banditAlive)
-                game.physics.arcade.moveToXY(bandit.bandit, player.char.x, player.char.y, 150);
 
-            game.physics.arcade.collide(player.char, bandit.bandit, this.collision);
-
+            player.update();         
             game.physics.arcade.collide(player.char, layer);
-
-            game.physics.arcade.collide(bullets, bandit.bandit, this.enemyKill);
-
 
             if (game.input.activePointer.isDown) {
                 if (game.time.now > nextFire && bullets.countDead() > 0) {
@@ -157,20 +164,19 @@
                 }
             }
 
-            var betweenBelow = (player.char.y > bandit.bandit.y) && (player.char.x >= bandit.bandit.x) && (player.char.x <= bandit.bandit.x + bandit.bandit.width);
-            var betweenUp = (player.char.y < bandit.bandit.y) && (player.char.x >= bandit.bandit.x) && (player.char.x <= bandit.bandit.x + bandit.bandit.width);
-            var right = (player.char.x > bandit.bandit.x + bandit.bandit.width);
-            var left = (player.char.x < bandit.bandit.x);
-            if (betweenBelow) {
-                bandit.bandit.frame = bandit.lookStay.down;
-            } else if (betweenUp) {
-                bandit.bandit.frame = bandit.lookStay.up;
-            } else if (left) {
-                bandit.bandit.frame = bandit.lookStay.left;
-            } else if (right) {
-                bandit.bandit.frame = bandit.lookStay.right;
+            for(let en of enemies) {
+                if (en.bandit.alive) {
+                    en.lookAtPlayer(player);
+                    game.physics.arcade.collide(player.char, en.bandit, vm.collision);
+                    game.physics.arcade.collide(bullets, en.bandit, vm.enemyKill);
+                    if (game.physics.arcade.distanceBetween(en.bandit, player.char) <= 500) {
+                       game.physics.arcade.moveToXY(en.bandit, player.char.x, player.char.y, 250);
+                    }
+
+                }
             }
 
+            bandit.lookAtPlayer(player);
             if (manaBarPrecent < 100 && allow) {
                 allow = false;
                 somethingtimeCheck = game.time.now;
@@ -183,37 +189,31 @@
                 }, 1000);
 
             }
-
-
-
-
             if (healthBarPrecent <= 0) {
+                myHealthBar.setPercent(0);
                 player.char.kill();
+                window.dispatchEvent(evt);
             }
         }
 
-        enemyKill(s1, s2) {
-            banditAlive = false;
+        enemyKill(s1, s2){
             setTimeout(function () {
                 s1.destroy();
                 expBar.setPercent(30);
+                numOfEnemiesKilled++;
             }, 100);
 
             s2.destroy();
         }
 
         collision(s1, s2) {
-
             Debug.writeln(player.direction);
             healthBarPrecent -= 1;
             myHealthBar.setPercent(healthBarPrecent);
-
             player.allowMove = false;
             player.followMousePointer = false;
             player.disableClick = true;
             s1.animations.stop();
-
-
             if (player.direction === 'up') {
                 s2.body.velocity.y = -200;
             } else if (player.direction === 'down') {
@@ -223,20 +223,16 @@
             } else if (player.direction === 'right') {
                 s2.body.velocity.x = 200;
             }
-
-
-
-
-            s1.body.velocity.x = 0;
-            s1.body.velocity.y = 0;
-            setTimeout(function () {
-                s2.body.velocity.x = 0;
-                s2.body.velocity.y = 0;
-                player.disableClick = false;
-            }, 100);
-
-
-
+    
+                s1.body.velocity.x = 0;
+                s1.body.velocity.y = 0;
+                setTimeout(function () {
+                    if (s2.alive) {
+                    s2.body.velocity.x = 0;
+                    s2.body.velocity.y = 0;
+                    player.disableClick = false;
+                    }
+                }, 300);
         }
     }
 

@@ -63,6 +63,23 @@
                 <img src="images/Antu_media-playback-pause.svg.png" height="150px" width="150px"  style="margin-bottom:50px;user-select: none;" id="pauseImg" alt="" />
             </div>
         </div>
+        <div style="overflow:hidden" id="modalDeath" ref="modal" class="modal-pause">
+            <div style="overflow:hidden" class="modal-content-pause">
+                <h2 style="text-align:center;color:#fff">YOU ARE DEAD</h2>
+                <button v-on:click="deathAgain()" class="button button--lvl2">
+                    <span class="button__inner">Again</span>
+                </button>
+                <button v-on:click="backMenuClick()" class="button button--boss">
+                    <span class="button__inner">Back to menu</span>
+                </button>
+            </div>
+        </div>
+        <div style="overflow:hidden" id="modalWin" ref="modal" class="modal-pause">
+            <div style="overflow:hidden" class="modal-content-pause">
+                <h2 style="text-align:center;color:#fff">Level completed</h2>
+                <h2 style="text-align:center;color:#fff">Sending player info to firebase</h2>
+            </div>
+        </div>
     </div>
     <script src="js/modal.menu.js"></script>
     <script src="js/main.menu.vue.js"></script>

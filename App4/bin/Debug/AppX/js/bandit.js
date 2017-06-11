@@ -1,14 +1,10 @@
 ﻿let Bandit = (function () {
 
-
-
-
-
     class Bandit {
 
-        constructor(game) {
+        constructor(game,x,y) {
             this.game = game;
-            this.bandit = this.game.add.sprite(game.world.centerX, game.world.centerY, 'bandit');
+            this.bandit = this.game.add.sprite(x, y, 'bandit');
             this.loadAnimations();
             this.game.physics.enable(this.bandit, Phaser.Physics.ARCADE);
             this.bandit.body.collideWorldBounds = true;
@@ -16,7 +12,7 @@
 
             this.bandit.body.velocity.x = 0;
             this.bandit.body.velocity.y = 0;
-
+            this.playerInRange = false;
 
             this.lookStay = {
                 "down": 131,
@@ -40,17 +36,30 @@
         }
 
         generateSpriteFramesArray(from, to) {
-            var x = 0;
-            var arr = new Array();
-            for (var i = from; i < to; i++) {
-                // var xxx = game.add.sprite(x, 50, 'char-start');
-                // xxx.frame = i;
+            let x = 0;
+            let arr = new Array();
+            for (let i = from; i < to; i++) {
                 arr.push(i);
 
                 x += 50;
             }
-            // Debug.writeln(arr);
             return arr;
+        }
+
+        lookAtPlayer(player) {
+            let betweenBelow = (player.char.y > this.bandit.y) && (player.char.x >= this.bandit.x) && (player.char.x <= this.bandit.x + this.bandit.width);
+            let betweenUp = (player.char.y < this.bandit.y) && (player.char.x >= this.bandit.x) && (player.char.x <= this.bandit.x + this.bandit.width);
+            let right = (player.char.x > this.bandit.x + this.bandit.width);
+            let left = (player.char.x < this.bandit.x);
+            if (betweenBelow) {
+                this.bandit.frame = this.lookStay.down;
+            } else if (betweenUp) {
+                this.bandit.frame = this.lookStay.up;
+            } else if (left) {
+                this.bandit.frame = this.lookStay.left;
+            } else if (right) {
+                this.bandit.frame = this.lookStay.right;
+            }
         }
 
     }

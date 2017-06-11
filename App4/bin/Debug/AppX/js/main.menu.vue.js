@@ -15,18 +15,25 @@ let vm = new Vue({
         error: '',
         email: '',
         password: '',
-        user: {}
+        user: {},
+        disablePause: false,
+        disableBack: false
     },
     created: function () {
+   
+
+        let modalDeath = document.getElementById('modalDeath');
         let modal = document.getElementById('modal');
         let modalpause = document.getElementById('modalpause');
-       // modal.style.display = "block";
         let buttons = document.getElementById('buttons'); pause
         let pause = document.getElementById('pause');
         let title = document.getElementById('title');
         let pausetxt = document.getElementById('pausetxt');
         let backMenu = document.getElementById('backMenu');
+        let modalWin = document.getElementById('modalWin');
         let currentLvl = {};
+
+      
 
     },
     methods: {
@@ -90,23 +97,60 @@ let vm = new Vue({
           
         },
         backMenuClick: function () {
-            currentLvl.endLevel();
-            buttons.className = 'showButtons';
-            title.className = ' downTitle'
-            backMenu.className = 'back-to-menu backHide';
-            pause.className = 'pause-btn backHide';
+            if (!this.disableBack) {
+                currentLvl.endLevel();
+                buttons.className = 'showButtons';
+                title.className = ' downTitle'
+                backMenu.className = 'back-to-menu backHide';
+                pause.className = 'pause-btn backHide';
+                modalDeath.style.display = "none";
+                modalpause.style.display = "none";
+                modalWin.style.display = "none";
+                this.disablePause = false;
+            }
         },
         pauseClick: function () {
-            if (pausetxt.innerText === 'Pause') {
-                pausetxt.innerText = 'Unpause';
-                currentLvl.pauseGame();
-                modalpause.style.display = "block";
-            } else {
-                pausetxt.innerText = 'Pause';
-                modalpause.style.display = "none";
-                currentLvl.unpauseGame();
+            if (!this.disablePause) {
+                if (pausetxt.innerText === 'Pause') {
+                    pausetxt.innerText = 'Unpause';
+                    currentLvl.pauseGame();
+                    modalpause.style.display = "block";
+                } else {
+                    pausetxt.innerText = 'Pause';
+                    modalpause.style.display = "none";
+                    currentLvl.unpauseGame();
+                }
             }
+        },
+        playerDead: function () {
+            currentLvl.pauseGame();
+            modalDeath.style.display = "block";
+            this.disablePause = true;
+        },
+        deathAgain: function () {
+            currentLvl.endLevel();
+            currentLvl = new Lvl1();
+            modalDeath.style.display = "none";
+        },
+        levelCompleted() {
+            this.disablePause = true;
+            this.disableBack = true
+            currentLvl.pauseGame();
+            modalWin.style.display = "block";
+            setTimeout(function () {
+                vm.disableBack = false;
+                vm.backMenuClick();
+            },5000);
         }
     }
 });
 
+vm.lvl1Click();
+
+window.addEventListener('playerDead', function (e) {
+    vm.playerDead();
+});
+
+window.addEventListener('levelCompleted', function (e) {
+    vm.levelCompleted();
+});
