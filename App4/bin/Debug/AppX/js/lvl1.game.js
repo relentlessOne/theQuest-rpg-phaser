@@ -43,7 +43,7 @@
         }
 
         preload() {
-            game.load.tilemap('world1', 'level_info/worldMap.json', null, Phaser.Tilemap.TILED_JSON);
+            game.load.tilemap('world1', 'level_info/lvl1.json', null, Phaser.Tilemap.TILED_JSON);
             game.load.image('tile1', 'level_info/base_out_atlas.png');
             game.load.image('tile2', 'level_info/build_atlas.png');
             game.load.image('tile3', 'level_info/obj_misk_atlas.png');
@@ -62,16 +62,16 @@
             map.addTilesetImage('terrain_atlas', 'tile4');
             map.addTilesetImage('build_atlas', 'tile2');
             map.addTilesetImage('obj_misk_atlas', 'tile3');
-            layer = map.createLayer('Trawa-drogi');
-            layer = map.createLayer('kanion');
+            layer = map.createLayer('lay1');
+            layer = map.createLayer('lay2');
   
             player = new Player(game);
 
             bandit = new Bandit(game, 0, 0);
 
 
-            for (let i = 0; i < 5 ; i++) {
-                enemies.push(new Bandit(game, Math.floor((Math.random() * 2650) + 200), Math.floor((Math.random() * 600) + 200)));
+            for (let i = 0; i < 60 ; i++) {
+                enemies.push(new Bandit(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
             }
 
 
@@ -80,7 +80,7 @@
             //}
 
 
-            map.setCollisionBetween(1, 10000, true, 'kanion');
+           // map.setCollisionBetween(1, 10000, true, 'kanion');
 
             layer.resizeWorld();
 
@@ -90,7 +90,7 @@
             bullets.enableBody = true;
             bullets.physicsBodyType = Phaser.Physics.ARCADE;
 
-            bullets.createMultiple(20, 'bullet');
+            bullets.createMultiple(20, 'fireball');
             bullets.setAll('checkWorldBounds', true);
             bullets.setAll('outOfBoundsKill', true);
 
@@ -138,7 +138,7 @@
         update() {
 
             Debug.writeln(numOfEnemiesKilled);
-            if (numOfEnemiesKilled === 5) {
+            if (numOfEnemiesKilled === 500) {
                 window.dispatchEvent(evt1);
             }
 
@@ -183,7 +183,7 @@
 
                 manaBarPrecent += 5;
                 manaBar.setPercent(manaBarPrecent);
-                bullets.createMultiple(1, 'bullet');
+                bullets.createMultiple(1, 'fireball');
                 setTimeout(function () {
                     allow = true;
                 }, 1000);

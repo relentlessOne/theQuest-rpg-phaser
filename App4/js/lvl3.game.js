@@ -1,4 +1,4 @@
-﻿let Lvl1 = (function () {
+﻿let Lvl3 = (function () {
     let game;
     let player;
     let bandit;
@@ -30,7 +30,7 @@
     let evt1;
     let numOfEnemiesKilled;
 
-    class Lvl1 {
+    class Lvl3 {
         constructor() {
             game = new Phaser.Game(w, h, Phaser.AUTO, 'phaser-view', { preload: this.preload, create: this.create, update: this.update });
             vm = this;
@@ -39,11 +39,11 @@
             evt1 = new CustomEvent('levelCompleted');
             healthBarPrecent = 100;
             numOfEnemiesKilled = 0;
-      
+
         }
 
         preload() {
-            game.load.tilemap('world1', 'level_info/lvl1.json', null, Phaser.Tilemap.TILED_JSON);
+            game.load.tilemap('world1', 'level_info/lvl3.json', null, Phaser.Tilemap.TILED_JSON);
             game.load.image('tile1', 'level_info/base_out_atlas.png');
             game.load.image('tile2', 'level_info/build_atlas.png');
             game.load.image('tile3', 'level_info/obj_misk_atlas.png');
@@ -64,14 +64,14 @@
             map.addTilesetImage('obj_misk_atlas', 'tile3');
             layer = map.createLayer('lay1');
             layer = map.createLayer('lay2');
-  
+
             player = new Player(game);
 
-            bandit = new Bandit(game, 0, 0);
+            bandit = new Skeleton(game, 0, 0);
 
 
-            for (let i = 0; i < 60 ; i++) {
-                enemies.push(new Bandit(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
+            for (let i = 0; i < 5 ; i++) {
+                enemies.push(new Skeleton(game, Math.floor((Math.random() * 2650) + 200), Math.floor((Math.random() * 600) + 200)));
             }
 
 
@@ -80,7 +80,7 @@
             //}
 
 
-           // map.setCollisionBetween(1, 10000, true, 'kanion');
+            //map.setCollisionBetween(1, 10000, true, 'kanion');
 
             layer.resizeWorld();
 
@@ -90,7 +90,7 @@
             bullets.enableBody = true;
             bullets.physicsBodyType = Phaser.Physics.ARCADE;
 
-            bullets.createMultiple(20, 'fireball');
+            bullets.createMultiple(20, 'bullet');
             bullets.setAll('checkWorldBounds', true);
             bullets.setAll('outOfBoundsKill', true);
 
@@ -104,7 +104,7 @@
 
 
             game.add.text(60, 32, "HP", { font: "32px Arial", fill: "#ffffff", align: "center" }).fixedToCamera = true;
-       
+
 
 
             manaBar = new HealthBar(game, {
@@ -134,16 +134,16 @@
             game.paused = false;
         }
 
-   
+
         update() {
 
             Debug.writeln(numOfEnemiesKilled);
-            if (numOfEnemiesKilled === 500) {
+            if (numOfEnemiesKilled === 5) {
                 window.dispatchEvent(evt1);
             }
 
 
-            player.update();         
+            player.update();
             game.physics.arcade.collide(player.char, layer);
 
             if (game.input.activePointer.isDown) {
@@ -170,7 +170,7 @@
                     game.physics.arcade.collide(player.char, en.bandit, vm.collision);
                     game.physics.arcade.collide(bullets, en.bandit, vm.enemyKill);
                     if (game.physics.arcade.distanceBetween(en.bandit, player.char) <= 500) {
-                       game.physics.arcade.moveToXY(en.bandit, player.char.x, player.char.y, 250);
+                        game.physics.arcade.moveToXY(en.bandit, player.char.x, player.char.y, 250);
                     }
 
                 }
@@ -183,7 +183,7 @@
 
                 manaBarPrecent += 5;
                 manaBar.setPercent(manaBarPrecent);
-                bullets.createMultiple(1, 'fireball');
+                bullets.createMultiple(1, 'bullet');
                 setTimeout(function () {
                     allow = true;
                 }, 1000);
@@ -196,7 +196,7 @@
             }
         }
 
-        enemyKill(s1, s2){
+        enemyKill(s1, s2) {
             setTimeout(function () {
                 s1.destroy();
                 expBar.setPercent(30);
@@ -223,18 +223,18 @@
             } else if (player.direction === 'right') {
                 s2.body.velocity.x = 200;
             }
-    
-                s1.body.velocity.x = 0;
-                s1.body.velocity.y = 0;
-                setTimeout(function () {
-                    if (s2.alive) {
+
+            s1.body.velocity.x = 0;
+            s1.body.velocity.y = 0;
+            setTimeout(function () {
+                if (s2.alive) {
                     s2.body.velocity.x = 0;
                     s2.body.velocity.y = 0;
                     player.disableClick = false;
-                    }
-                }, 300);
+                }
+            }, 300);
         }
     }
 
-    return Lvl1;
+    return Lvl3;
 }());

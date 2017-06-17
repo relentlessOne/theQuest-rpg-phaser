@@ -9,6 +9,8 @@
 firebase.initializeApp(config);
 
 
+
+
 let vm = new Vue({
     el: '#gameMenu',
     data: {
@@ -17,13 +19,13 @@ let vm = new Vue({
         password: '',
         user: {},
         disablePause: false,
-        disableBack: false
+        disableBack: false,
+        playerInfo : {}
     },
     created: function () {
-   
-
         let modalDeath = document.getElementById('modalDeath');
         let modal = document.getElementById('modal');
+        //modal.style.display = "block";
         let modalpause = document.getElementById('modalpause');
         let buttons = document.getElementById('buttons'); pause
         let pause = document.getElementById('pause');
@@ -33,7 +35,8 @@ let vm = new Vue({
         let modalWin = document.getElementById('modalWin');
         let currentLvl = {};
 
-      
+
+ 
 
     },
     methods: {
@@ -49,6 +52,10 @@ let vm = new Vue({
                         usernameanim.className += " user-name-animation-out";
                     },5000);
                     vm.user = user;
+              
+                   
+                    
+
                 })
                 .catch(function (error) {
                 vm.error = "Wrong username or password";
@@ -74,8 +81,14 @@ let vm = new Vue({
                 this.error = "";
                 var vm = this;
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-                    .then(function () {
+                    .then(function (user) {
                         modal.style.display = "none";
+                        let usernameanim = document.getElementById('user-name-animate')
+                        usernameanim.className += " user-name-animation";
+                        setTimeout(function () {
+                            usernameanim.className += " user-name-animation-out";
+                        }, 5000);
+                        vm.user = user;
                     })
                     .catch(function (error) {
                         vm.error = "Email exists";
@@ -95,6 +108,26 @@ let vm = new Vue({
                 currentLvl = new Lvl1();
             }, 1200);
           
+        },
+        lvl2Click:function(){
+            buttons.className = 'fadeOut';
+            title.className = 'moveUp';
+            backMenu.className = 'back-to-menu showBackMenu';
+            pause.className = 'pause-btn showBackMenu';
+            pausetxt.innerText = "Pause";
+            setTimeout(function () {
+                currentLvl = new Lvl2();
+            }, 1200);
+        },
+        lvl3Click: function () {
+            buttons.className = 'fadeOut';
+            title.className = 'moveUp';
+            backMenu.className = 'back-to-menu showBackMenu';
+            pause.className = 'pause-btn showBackMenu';
+            pausetxt.innerText = "Pause";
+            setTimeout(function () {
+                currentLvl = new Lvl3();
+            }, 1200);
         },
         backMenuClick: function () {
             if (!this.disableBack) {
@@ -122,6 +155,33 @@ let vm = new Vue({
                 }
             }
         },
+        prepareLvlButtons(){
+            if (!this.playerInfo.availableLvls[0]) {
+                $('#btnLvl1').attr("disabled", true);
+                $('#btnLvl1').css({ 'opacity': '0.6' });
+            } else {
+                $('#btnLvl1').attr("disabled", false);
+                $('#btnLvl1').css({ 'opacity': '1' });
+            }
+
+            if (!this.playerInfo.availableLvls[1]) {
+                $('#btnLvl2').attr("disabled", true);
+                $('#btnLvl2').css({ 'opacity': '0.6' });
+            } else {
+                $('#btnLvl2').attr("disabled", false);
+                $('#btnLvl2').css({ 'opacity': '1' });
+            }
+
+            if (!this.playerInfo.availableLvls[2]) {
+                $('#btnLvl3').attr("disabled", true);
+                $('#btnLvl3').css({ 'opacity': '0.6' });
+            } else {
+                $('#btnLvl3').attr("disabled", false);
+                $('#btnLvl3').css({ 'opacity': '1' });
+            }
+
+
+        },
         playerDead: function () {
             currentLvl.pauseGame();
             modalDeath.style.display = "block";
@@ -145,7 +205,15 @@ let vm = new Vue({
     }
 });
 
-vm.lvl1Click();
+//vm.lvl1Click();
+
+vm.playerInfo = {
+    availableLvls: [true, true, true],
+    currentLvl: 1,
+    exp: 0
+}
+
+vm.prepareLvlButtons();
 
 window.addEventListener('playerDead', function (e) {
     vm.playerDead();

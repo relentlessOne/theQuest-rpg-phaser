@@ -60,8 +60,19 @@
     </AppxManifest>
     <Content Include="images\Antu_media-playback-pause.svg.png" />
     <Content Include="images\d8d47af9059b6b3f12e47ea6014c966d.png" />
+    <Content Include="images\fireball.png" />
+    <Content Include="images\orcsprite.png" />
     <Content Include="images\pause-button-png-6.png" />
+    <Content Include="images\skeleton.png" />
+    <Content Include="js\lvl2.game.js" />
+    <Content Include="js\lvl3.game.js" />
     <Content Include="js\modal.menu.js" />
+    <Content Include="js\orc.js" />
+    <Content Include="js\playerInfo.service.js" />
+    <Content Include="js\skeleton.js" />
+    <Content Include="level_info\lvl1.json" />
+    <Content Include="level_info\lvl2.json" />
+    <Content Include="level_info\lvl3.json" />
     <Content Include="libs\bootstrap.min.css" />
     <Content Include="libs\firebase.js" />
     <Content Include="libs\jquery.min.js" />

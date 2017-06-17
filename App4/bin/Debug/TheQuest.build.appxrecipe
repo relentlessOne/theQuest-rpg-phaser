@@ -28,8 +28,17 @@
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\d8d47af9059b6b3f12e47ea6014c966d.png">
       <PackagePath>images\d8d47af9059b6b3f12e47ea6014c966d.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\fireball.png">
+      <PackagePath>images\fireball.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\orcsprite.png">
+      <PackagePath>images\orcsprite.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\pause-button-png-6.png">
       <PackagePath>images\pause-button-png-6.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\skeleton.png">
+      <PackagePath>images\skeleton.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.png">
       <PackagePath>fonts\nokia16black.png</PackagePath>
@@ -88,8 +97,23 @@
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\terrain_atlas.png">
       <PackagePath>level_info\terrain_atlas.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\lvl2.game.js">
+      <PackagePath>js\lvl2.game.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\lvl3.game.js">
+      <PackagePath>js\lvl3.game.js</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\modal.menu.js">
       <PackagePath>js\modal.menu.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\orc.js">
+      <PackagePath>js\orc.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\playerInfo.service.js">
+      <PackagePath>js\playerInfo.service.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\skeleton.js">
+      <PackagePath>js\skeleton.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\firebase.js">
       <PackagePath>libs\firebase.js</PackagePath>
@@ -127,6 +151,21 @@
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vueResources.js">
       <PackagePath>libs\vueResources.js</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\lvl1.json">
+      <PackagePath>level_info\lvl1.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\lvl2.json">
+      <PackagePath>level_info\lvl2.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\lvl3.json">
+      <PackagePath>level_info\lvl3.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\char.json">
+      <PackagePath>images\char.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap.json">
+      <PackagePath>level_info\worldMap.json</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\bootstrap.min.css">
       <PackagePath>libs\bootstrap.min.css</PackagePath>
     </AppxPackagedFile>
@@ -135,12 +174,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
       <PackagePath>fonts\nokia16black.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\images\char.json">
-      <PackagePath>images\char.json</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap.json">
-      <PackagePath>level_info\worldMap.json</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>

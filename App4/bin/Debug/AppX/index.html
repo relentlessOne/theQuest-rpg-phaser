@@ -18,7 +18,7 @@
     <div id="gameMenu">
         <div id="user-name-animate" class="user-name">
             <p>
-                Welcome asdasdasd@dasdasd.com
+                Welcome {{user.email}}
             </p>
         </div>
         <div id="modal" ref="modal" class="modal">
@@ -47,14 +47,14 @@
         </div>
         <h1 id="title">THE QUEST</h1>
         <div id="buttons">
-            <button v-on:click="lvl1Click()" class="button button--lvl1">
+            <button id="btnLvl1"  v-on:click="lvl1Click()" class="button button--lvl1">
                 <span class="button__inner">Level 1</span>
             </button>
-            <button class="button button--lvl2">
+            <button id="btnLvl2" v-on:click="lvl2Click()" class="button button--lvl2">
                 <span class="button__inner">Level 2</span>
             </button>
-            <button class="button button--boss">
-                <span class="button__inner">Boss</span>
+            <button id="btnLvl3" v-on:click="lvl3Click()" class="button button--boss">
+                <span class="button__inner">Level 3</span>
             </button>
         </div>
         <div id="phaser-view"></div>
@@ -82,11 +82,16 @@
         </div>
     </div>
     <script src="js/modal.menu.js"></script>
+    <script src="js/playerInfo.service.js"></script>
     <script src="js/main.menu.vue.js"></script>
     <script src="js/loadSprites.js"></script>
     <script src="js/player.js"></script>
     <script src="js/bandit.js"></script>
+    <script src="js/orc.js"></script>
+    <script src="js/skeleton.js"></script>
     <script src="js/csvToArr.js"></script>
     <script src="js/lvl1.game.js"></script>
+    <script src="js/lvl2.game.js"></script>
+    <script src="js/lvl3.game.js"></script>
 </body>
 </html>
