@@ -1,4 +1,4 @@
-﻿let Lvl3 = (function () {
+﻿let Lvl = (function () {
     let game;
     let player;
     let bandit;
@@ -12,7 +12,7 @@
     let myHealthBar;
     let manaBar;
     let healthBarPrecent;
-    let manaBarPrecent = 100;
+    let manaBarPrecent;
     let banditAlive = true;
     let expBar;
     let expBarPrecent = 0;
@@ -30,28 +30,54 @@
     let evt1;
     let numOfEnemiesKilled;
 
-    class Lvl3 {
-        constructor() {
+    let manaRefreshTimeout;
+
+
+
+    let playerInfo;
+
+
+    let lvlID;
+
+    class Lvl {
+        constructor(_lvlID, _playerInfo) {
+
+            playerInfo = _playerInfo;
+            lvlID = _lvlID;
             game = new Phaser.Game(w, h, Phaser.AUTO, 'phaser-view', { preload: this.preload, create: this.create, update: this.update });
             vm = this;
             enemies = [];
             evt = new CustomEvent('playerDead');
             evt1 = new CustomEvent('levelCompleted');
-            healthBarPrecent = 100;
+            healthBarPrecent = playerInfo.maxHp;
+            manaBarPrecent = playerInfo.maxMana;
             numOfEnemiesKilled = 0;
 
         }
 
         preload() {
-            game.load.tilemap('world1', 'level_info/lvl3.json', null, Phaser.Tilemap.TILED_JSON);
+            if (lvlID === 1) {
+                game.load.tilemap('world1', 'level_info/lvl1.json', null, Phaser.Tilemap.TILED_JSON);
+            }
+
+            if (lvlID === 2) {
+                game.load.tilemap('world1', 'level_info/lvl2.json', null, Phaser.Tilemap.TILED_JSON);
+            }
+
+            if (lvlID === 3) {
+                game.load.tilemap('world1', 'level_info/lvl3.json', null, Phaser.Tilemap.TILED_JSON);
+            }
+
             game.load.image('tile1', 'level_info/base_out_atlas.png');
             game.load.image('tile2', 'level_info/build_atlas.png');
             game.load.image('tile3', 'level_info/obj_misk_atlas.png');
             game.load.image('tile4', 'level_info/terrain_atlas.png');
+
             new LoadSprites(this);
         }
 
         endLevel() {
+            clearTimeout(manaRefreshTimeout);
             game.destroy();
         }
 
@@ -67,20 +93,22 @@
 
             player = new Player(game);
 
-            bandit = new Skeleton(game, 0, 0);
 
 
-            for (let i = 0; i < 5 ; i++) {
-                enemies.push(new Skeleton(game, Math.floor((Math.random() * 2650) + 200), Math.floor((Math.random() * 600) + 200)));
+            for (let i = 0; i < 60 ; i++) {
+                if (lvlID === 1) {
+                    enemies.push(new Bandit(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
+                }
+
+                if (lvlID === 2) {
+                    enemies.push(new Orc(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
+                }
+
+                if (lvlID === 3) {
+                    enemies.push(new Skeleton(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
+                }
+
             }
-
-
-            //for (let i = 0; i < 30 ; i++) {
-            //    enemies.push(new Bandit(game, Math.floor((Math.random() * 2650) + 1000), Math.floor((Math.random() * 2550) + 600)));
-            //}
-
-
-            //map.setCollisionBetween(1, 10000, true, 'kanion');
 
             layer.resizeWorld();
 
@@ -90,7 +118,7 @@
             bullets.enableBody = true;
             bullets.physicsBodyType = Phaser.Physics.ARCADE;
 
-            bullets.createMultiple(20, 'bullet');
+            bullets.createMultiple(20, 'fireball');
             bullets.setAll('checkWorldBounds', true);
             bullets.setAll('outOfBoundsKill', true);
 
@@ -137,10 +165,11 @@
 
         update() {
 
-            Debug.writeln(numOfEnemiesKilled);
-            if (numOfEnemiesKilled === 5) {
+
+            if (numOfEnemiesKilled === 500) {
                 window.dispatchEvent(evt1);
             }
+
 
 
             player.update();
@@ -149,20 +178,42 @@
             if (game.input.activePointer.isDown) {
                 if (game.time.now > nextFire && bullets.countDead() > 0) {
 
-                    manaBarPrecent -= 5;
+                    manaBarPrecent -= 20;
+                    if (manaBarPrecent < 0) {
+                        manaBarPrecent = 0;
+                    } else {
+                        nextFire = game.time.now + fireRate;
 
-                    if (manaBarPrecent <= 0) manaBarPrecent = 0;
-                    manaBar.setPercent(manaBarPrecent);
+                        let bullet = bullets.getFirstDead();
 
-                    nextFire = game.time.now + fireRate;
+                        bullet.reset(player.char.x - 8, player.char.y - 8);
 
-                    let bullet = bullets.getFirstDead();
+                        game.physics.arcade.moveToPointer(bullet, playerInfo.bulletSpeed);
+                    }
+                    manaBar.setPercent((manaBarPrecent * 100) / playerInfo.maxMana);
 
-                    bullet.reset(player.char.x - 8, player.char.y - 8);
 
-                    game.physics.arcade.moveToPointer(bullet, 300);
+
+
+
+
+
                 }
             }
+
+
+
+
+
+
+            for (let i = 0, len = bullets.children.length; i < len; i++) {
+                if (game.physics.arcade.distanceBetween(player.char, bullets.children[i]) >= playerInfo.maxBulletDistance) {
+                    bullets.children[i].kill();
+                }
+            }
+
+
+
 
             for(let en of enemies) {
                 if (en.bandit.alive) {
@@ -176,19 +227,19 @@
                 }
             }
 
-            bandit.lookAtPlayer(player);
-            if (manaBarPrecent < 100 && allow) {
-                allow = false;
-                somethingtimeCheck = game.time.now;
 
-                manaBarPrecent += 5;
-                manaBar.setPercent(manaBarPrecent);
-                bullets.createMultiple(1, 'bullet');
-                setTimeout(function () {
+            if (manaBarPrecent < playerInfo.maxMana && allow) {
+                allow = false;
+                manaRefreshTimeout = setTimeout(function () {
+                    manaBarPrecent += 20;
+                    bullets.createMultiple(1, 'fireball');
+                    manaBar.setPercent((manaBarPrecent * 100) / playerInfo.maxMana);
                     allow = true;
-                }, 1000);
+                }, playerInfo.manaRefreshRate);
 
             }
+
+
             if (healthBarPrecent <= 0) {
                 myHealthBar.setPercent(0);
                 player.char.kill();
@@ -206,10 +257,14 @@
             s2.destroy();
         }
 
+        getLvlID() {
+            return lvlID;
+        }
+
         collision(s1, s2) {
             Debug.writeln(player.direction);
             healthBarPrecent -= 1;
-            myHealthBar.setPercent(healthBarPrecent);
+            myHealthBar.setPercent((healthBarPrecent * 100) / playerInfo.maxHp);
             player.allowMove = false;
             player.followMousePointer = false;
             player.disableClick = true;
@@ -236,5 +291,5 @@
         }
     }
 
-    return Lvl3;
+    return Lvl;
 }());

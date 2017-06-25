@@ -11,6 +11,20 @@ firebase.initializeApp(config);
 
 
 
+let playerInfo = {
+    maxNumOfFireballs: 100,
+    manaRefreshRate: 2000,
+    speed: 100,
+    bulletSpeed: 100,
+    maxBulletDistance: 300,
+    maxHp: 1000,
+    maxMana: 100,
+    lvl: 1,
+    exp: 0,
+    expToNextLvl: 200,
+}
+
+
 let vm = new Vue({
     el: '#gameMenu',
     data: {
@@ -20,7 +34,7 @@ let vm = new Vue({
         user: {},
         disablePause: false,
         disableBack: false,
-        playerInfo : {}
+        playerInfo: {}
     },
     created: function () {
         let modalDeath = document.getElementById('modalDeath');
@@ -36,11 +50,11 @@ let vm = new Vue({
         let currentLvl = {};
 
 
- 
+
 
     },
     methods: {
-        login: function()  {
+        login: function () {
             this.error = "";
             var vm = this;
             firebase.auth().signInWithEmailAndPassword(this.email, this.password)
@@ -50,21 +64,21 @@ let vm = new Vue({
                     usernameanim.className += " user-name-animation";
                     setTimeout(function () {
                         usernameanim.className += " user-name-animation-out";
-                    },5000);
+                    }, 5000);
                     vm.user = user;
-              
-                   
-                    
+
+
+
 
                 })
                 .catch(function (error) {
-                vm.error = "Wrong username or password";
-            });
+                    vm.error = "Wrong username or password";
+                });
         },
         register: function () {
 
             let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
- 
+
             this.error = "";
             let fail = false;
             if (!regex.test(this.email)) {
@@ -76,7 +90,7 @@ let vm = new Vue({
                 this.error += "<br>Password is too short";
                 fail = true;
             }
- 
+
             if (!fail) {
                 this.error = "";
                 var vm = this;
@@ -92,7 +106,7 @@ let vm = new Vue({
                     })
                     .catch(function (error) {
                         vm.error = "Email exists";
-                });
+                    });
             }
         },
         loadUserData: function () {
@@ -104,19 +118,19 @@ let vm = new Vue({
             backMenu.className = 'back-to-menu showBackMenu';
             pause.className = 'pause-btn showBackMenu';
             pausetxt.innerText = "Pause";
-            setTimeout(function () {
-                currentLvl = new Lvl1();
+            setTimeout(() => {
+                currentLvl = new Lvl(1,playerInfo);
             }, 1200);
-          
+
         },
-        lvl2Click:function(){
+        lvl2Click: function () {
             buttons.className = 'fadeOut';
             title.className = 'moveUp';
             backMenu.className = 'back-to-menu showBackMenu';
             pause.className = 'pause-btn showBackMenu';
             pausetxt.innerText = "Pause";
-            setTimeout(function () {
-                currentLvl = new Lvl2();
+            setTimeout(() => {
+                currentLvl = new Lvl(2);
             }, 1200);
         },
         lvl3Click: function () {
@@ -125,8 +139,8 @@ let vm = new Vue({
             backMenu.className = 'back-to-menu showBackMenu';
             pause.className = 'pause-btn showBackMenu';
             pausetxt.innerText = "Pause";
-            setTimeout(function () {
-                currentLvl = new Lvl3();
+            setTimeout(() => {
+                currentLvl = new Lvl(3);
             }, 1200);
         },
         backMenuClick: function () {
@@ -155,7 +169,7 @@ let vm = new Vue({
                 }
             }
         },
-        prepareLvlButtons(){
+        prepareLvlButtons() {
             if (!this.playerInfo.availableLvls[0]) {
                 $('#btnLvl1').attr("disabled", true);
                 $('#btnLvl1').css({ 'opacity': '0.6' });
@@ -189,7 +203,22 @@ let vm = new Vue({
         },
         deathAgain: function () {
             currentLvl.endLevel();
-            currentLvl = new Lvl1();
+
+
+            if (currentLvl.getLvlID() === 1) {
+                currentLvl = new Lvl(1);
+            }
+
+            if (currentLvl.getLvlID() === 2) {
+                currentLvl = new Lvl(2);
+            }
+
+            if (currentLvl.getLvlID() === 3) {
+                currentLvl = new Lvl(3);
+            }
+
+
+
             modalDeath.style.display = "none";
         },
         levelCompleted() {
@@ -200,12 +229,12 @@ let vm = new Vue({
             setTimeout(function () {
                 vm.disableBack = false;
                 vm.backMenuClick();
-            },5000);
+            }, 5000);
         }
     }
 });
 
-//vm.lvl1Click();
+
 
 vm.playerInfo = {
     availableLvls: [true, true, true],
