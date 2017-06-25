@@ -28,9 +28,10 @@
     let vm;
     let evt;
     let evt1;
+    let evLvlUp;
     let numOfEnemiesKilled;
 
-    let manaRefreshTimeout;
+    let manaRefreshTimeout = null;
 
 
 
@@ -50,9 +51,11 @@
             enemies = [];
             evt = new CustomEvent('playerDead');
             evt1 = new CustomEvent('levelCompleted');
+            evLvlUp = new CustomEvent('levelUp');
             healthBarPrecent = playerInfo.maxHp;
             manaBarPrecent = playerInfo.maxMana;
-             
+            manaRefreshTimeout = null;
+            allow = true;
             numOfEnemiesKilled = 0;
 
         }
@@ -173,9 +176,6 @@
             }
 
 
-     
-
-
             player.update();
             game.physics.arcade.collide(player.char, layer);
 
@@ -195,12 +195,6 @@
                         game.physics.arcade.moveToPointer(bullet, playerInfo.bulletSpeed);
                     }
                     manaBar.setPercent((manaBarPrecent * 100) / playerInfo.maxMana);
-
-
-
-
-
-
 
                 }
             }
@@ -251,23 +245,30 @@
             }
         }
 
+
+
         enemyKill(s1, s2) {
             setTimeout(function () {
                 s1.destroy();
                 if (lvlID === 1) {
-                    playerInfo.exp += 100;
+                    playerInfo.exp += 50;
                 }
 
                 if (lvlID === 2) {
-                    playerInfo.exp += 25;
+                    playerInfo.exp += 100;
                 }
 
                 if (lvlID === 3) {
-                    playerInfo.exp += 35;
+                    playerInfo.exp += 150;
                 }
 
                 if (playerInfo.exp === playerInfo.expToNextLvl) {
                     player.stats.lvlUp(playerInfo);
+                    window.dispatchEvent(evLvlUp);
+                    healthBarPrecent = playerInfo.maxHp;
+                    manaBarPrecent = playerInfo.maxMana;
+                    myHealthBar.setPercent((healthBarPrecent * 100) / playerInfo.maxHp);
+                    manaBar.setPercent((manaBarPrecent * 100) / playerInfo.maxMana);
 
                 }
 
@@ -286,6 +287,19 @@
 
         collision(s1, s2) {
             Debug.writeln(player.direction);
+
+            if (lvlID === 1) {
+                healthBarPrecent -= 1;
+            }
+
+            if (lvlID === 2) {
+                healthBarPrecent -= 4;
+            }
+
+            if (lvlID === 3) {
+                healthBarPrecent -= 10;
+            }
+
             healthBarPrecent -= 1;
             myHealthBar.setPercent((healthBarPrecent * 100) / playerInfo.maxHp);
             player.allowMove = false;

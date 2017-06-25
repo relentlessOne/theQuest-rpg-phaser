@@ -9,6 +9,19 @@
     margin-top: -150px;
     background: white;
 }
+
+.playerInfo{
+    position:absolute;
+    width:600px;
+    top:60%;
+}
+
+.playerInfo p{
+    color:white;
+    font-size:25px;
+    font-weight:bold;
+}
+
 .buttons button {
     width: 100%;
 }
@@ -442,17 +455,24 @@ body {
 }
 
 
-.lvlUp{
+#lvlUp{
     position:absolute;
     bottom:50px;
     width:1024px;
     text-align:center;
     left:0;
-    animation: lvlupOut 0.7s normal forwards ease-in-out;
+    visibility: hidden;
+
 }
 
+.lvlUpIn{
+        animation: lvlupIn 0.5s normal forwards ease-in-out;
+}
+.lvlUpOut{
+    animation: lvlupOut 0.5s normal forwards ease-in-out;
+}
 
-.lvlUp p{
+#lvlUp p{
     color:white;
     font-size:50px;
     font-weight:bold;
@@ -462,10 +482,12 @@ body {
 
 @keyframes lvlupIn{
     0% {
+        visibility:visible;
         opacity: 0;
         transform: scale(0);
     }
     100% {
+          visibility:visible;
         opacity: 1;
         transform: scale(1);
     }
@@ -474,10 +496,12 @@ body {
 
 @keyframes lvlupOut{
     0% {
+                visibility:visible;
         opacity: 1;
         transform: scale(1);
     }
     100% {
+         visibility:hidden;
         opacity: 0;
         transform: scale(0);
     }

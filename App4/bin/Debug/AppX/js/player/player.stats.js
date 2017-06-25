@@ -7,11 +7,14 @@
         }
 
         lvlUp(player) {
-            if (player.lvl === 1) {
-                player.lvl = 2;
-                player.expToNextLvl = 500;
-            }
-
+               
+            player.lvl++;
+            player.expToNextLvl *= 2;
+            player.bulletSpeed += 20;
+            player.maxBulletDistance += 40;
+            player.maxHp += 50;
+            player.maxMana += 20;
+            player.manaRefreshRate -= 4000;
             player.exp = 0;
         }
 

@@ -16,8 +16,8 @@ let playerInfo = {
     manaRefreshRate: 2000,
     speed: 100,
     bulletSpeed: 300,
-    maxBulletDistance: 200,
-    maxHp: 1000,
+    maxBulletDistance: 100,
+    maxHp: 100,
     maxMana: 100,
     lvl: 1,
     exp: 0,
@@ -44,9 +44,16 @@ let vm = new Vue({
         let buttons = document.getElementById('buttons'); pause
         let pause = document.getElementById('pause');
         let title = document.getElementById('title');
+        let lvlUp = document.getElementById('lvlUp');
+        let lvl = document.getElementById('lvl');
         let pausetxt = document.getElementById('pausetxt');
         let backMenu = document.getElementById('backMenu');
+
         let modalWin = document.getElementById('modalWin');
+        let mainLvl = document.getElementById('playerLVL');
+        let mainHp = document.getElementById('playerMaxHp');
+        let mainMana = document.getElementById('playerMaxMana');
+        let mainToNext = document.getElementById('playerExpToNextLvl');
         let currentLvl = {};
 
 
@@ -119,7 +126,7 @@ let vm = new Vue({
             pause.className = 'pause-btn showBackMenu';
             pausetxt.innerText = "Pause";
             setTimeout(() => {
-                currentLvl = new Lvl(1,playerInfo);
+                currentLvl = new Lvl(1, playerInfo);
             }, 1200);
 
         },
@@ -130,7 +137,7 @@ let vm = new Vue({
             pause.className = 'pause-btn showBackMenu';
             pausetxt.innerText = "Pause";
             setTimeout(() => {
-                currentLvl = new Lvl(2);
+                currentLvl = new Lvl(2, playerInfo);
             }, 1200);
         },
         lvl3Click: function () {
@@ -140,7 +147,7 @@ let vm = new Vue({
             pause.className = 'pause-btn showBackMenu';
             pausetxt.innerText = "Pause";
             setTimeout(() => {
-                currentLvl = new Lvl(3);
+                currentLvl = new Lvl(3, playerInfo);
             }, 1200);
         },
         backMenuClick: function () {
@@ -206,15 +213,15 @@ let vm = new Vue({
 
 
             if (currentLvl.getLvlID() === 1) {
-                currentLvl = new Lvl(1);
+                currentLvl = new Lvl(1,playerInfo);
             }
 
             if (currentLvl.getLvlID() === 2) {
-                currentLvl = new Lvl(2);
+                currentLvl = new Lvl(2, playerInfo);
             }
 
             if (currentLvl.getLvlID() === 3) {
-                currentLvl = new Lvl(3);
+                currentLvl = new Lvl(3, playerInfo);
             }
 
 
@@ -230,6 +237,13 @@ let vm = new Vue({
                 vm.disableBack = false;
                 vm.backMenuClick();
             }, 5000);
+        },
+        levelUp() {
+            lvlUp.className = "lvlUpIn";
+            lvl.innerText = "Lvl up " + playerInfo.lvl;
+            setTimeout(() => {
+                lvlUp.className = "lvlUpOut";
+            }, 1200);
         }
     }
 });
@@ -250,4 +264,8 @@ window.addEventListener('playerDead', function (e) {
 
 window.addEventListener('levelCompleted', function (e) {
     vm.levelCompleted();
+});
+
+window.addEventListener('levelUp', function (e) {
+    vm.levelUp();
 });
