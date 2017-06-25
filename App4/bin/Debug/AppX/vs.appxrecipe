@@ -148,15 +148,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\lvl\lvl.game.js">
       <PackagePath>js\lvl\lvl.game.js</PackagePath>
-      <Modified>2017-06-25T11:40:17.892</Modified>
+      <Modified>2017-06-25T13:42:52.754</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player\player.stats.js">
       <PackagePath>js\player\player.stats.js</PackagePath>
-      <Modified>2017-06-25T10:05:46.709</Modified>
+      <Modified>2017-06-25T13:31:41.040</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player\player.js">
       <PackagePath>js\player\player.js</PackagePath>
-      <Modified>2017-06-24T22:17:23.239</Modified>
+      <Modified>2017-06-25T13:30:39.505</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\firebase.js">
       <PackagePath>libs\firebase.js</PackagePath>
@@ -180,7 +180,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.menu.vue.js">
       <PackagePath>js\main.menu.vue.js</PackagePath>
-      <Modified>2017-06-25T11:39:49.831</Modified>
+      <Modified>2017-06-25T12:40:07.464</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vueResources.js">
       <PackagePath>libs\vueResources.js</PackagePath>
@@ -212,7 +212,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2017-06-24T22:17:23.212</Modified>
+      <Modified>2017-06-25T13:49:53.666</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
       <PackagePath>fonts\nokia16black.xml</PackagePath>
@@ -220,7 +220,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2017-06-25T10:05:09.937</Modified>
+      <Modified>2017-06-25T13:41:29.868</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap_kanion.csv">
       <PackagePath>level_info\worldMap_kanion.csv</PackagePath>

@@ -49,6 +49,7 @@ let Player = (function () {
             key_D = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
             this.game.input.keyboard.addCallbacks(this.game, this.chuj, null, null);
             this.allowMove = true;
+            this.stats = new PlayerStats();
         }
 
 

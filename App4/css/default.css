@@ -440,3 +440,45 @@ body {
     height:40px;
     width:40px;
 }
+
+
+.lvlUp{
+    position:absolute;
+    bottom:50px;
+    width:1024px;
+    text-align:center;
+    left:0;
+    animation: lvlupOut 0.7s normal forwards ease-in-out;
+}
+
+
+.lvlUp p{
+    color:white;
+    font-size:50px;
+    font-weight:bold;
+         
+}
+
+
+@keyframes lvlupIn{
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes lvlupOut{
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}

@@ -34,6 +34,7 @@
 
 
 
+
     let playerInfo;
 
 
@@ -51,6 +52,7 @@
             evt1 = new CustomEvent('levelCompleted');
             healthBarPrecent = playerInfo.maxHp;
             manaBarPrecent = playerInfo.maxMana;
+             
             numOfEnemiesKilled = 0;
 
         }
@@ -149,7 +151,7 @@
 
             expBar = new HealthBar(game, { x: 500, y: 50, width: 120 });
             expBar.setFixedToCamera(true);
-            expBar.setPercent(0);
+            expBar.setPercent((playerInfo.exp * 100) / playerInfo.expToNextLvl);
             game.add.text(470, 32, "EXP", { font: "32px Arial", fill: "#ffffff", align: "center" }).fixedToCamera = true;
 
         }
@@ -170,6 +172,8 @@
                 window.dispatchEvent(evt1);
             }
 
+
+     
 
 
             player.update();
@@ -250,7 +254,26 @@
         enemyKill(s1, s2) {
             setTimeout(function () {
                 s1.destroy();
-                expBar.setPercent(30);
+                if (lvlID === 1) {
+                    playerInfo.exp += 100;
+                }
+
+                if (lvlID === 2) {
+                    playerInfo.exp += 25;
+                }
+
+                if (lvlID === 3) {
+                    playerInfo.exp += 35;
+                }
+
+                if (playerInfo.exp === playerInfo.expToNextLvl) {
+                    player.stats.lvlUp(playerInfo);
+
+                }
+
+                expBar.setPercent((playerInfo.exp * 100) / playerInfo.expToNextLvl);
+
+
                 numOfEnemiesKilled++;
             }, 100);
 

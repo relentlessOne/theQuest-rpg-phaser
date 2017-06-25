@@ -1,6 +1,6 @@
-﻿let PlayerInfo = (function () {
+﻿let PlayerStats = (function () {
 
-    class PlayerInfo {
+    class PlayerStats {
 
         constructor() {
 
@@ -11,11 +11,13 @@
                 player.lvl = 2;
                 player.expToNextLvl = 500;
             }
+
+            player.exp = 0;
         }
 
     }
 
-    return PlayerInfo;
+    return PlayerStats;
 }());
 
 
