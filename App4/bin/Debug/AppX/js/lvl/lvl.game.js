@@ -29,6 +29,7 @@
     let evt;
     let evt1;
     let evLvlUp;
+    let numToKill;
     let numOfEnemiesKilled;
 
     let manaRefreshTimeout = null;
@@ -98,22 +99,29 @@
 
             player = new Player(game);
 
-
-
-            for (let i = 0; i < 60 ; i++) {
-                if (lvlID === 1) {
-                    enemies.push(new Bandit(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
+            if (lvlID === 1) {
+                for (let i = 0; i < 150 ; i++) {
+                    enemies.push(new Bandit(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
                 }
-
-                if (lvlID === 2) {
-                    enemies.push(new Orc(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
-                }
-
-                if (lvlID === 3) {
-                    enemies.push(new Skeleton(game, Math.floor((Math.random() * 1600) + 200), Math.floor((Math.random() * 1600) + 200)));
-                }
-
+                numToKill = 150;
             }
+
+            if (lvlID === 2 ){
+                for (let i = 0; i < 80 ; i++) {
+                    enemies.push(new Orc(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
+                }
+                numToKill = 80;
+            }
+
+            if (lvlID === 3) {
+                for (let i = 0; i < 40 ; i++) {
+                    enemies.push(new Skeleton(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
+                }
+                numToKill = 40;
+            }
+
+
+  
 
             layer.resizeWorld();
 
@@ -170,8 +178,8 @@
 
         update() {
 
-
-            if (numOfEnemiesKilled === 500) {
+            
+            if (numOfEnemiesKilled === numToKill) {
                 window.dispatchEvent(evt1);
             }
 
@@ -219,7 +227,21 @@
                     game.physics.arcade.collide(player.char, en.bandit, vm.collision);
                     game.physics.arcade.collide(bullets, en.bandit, vm.enemyKill);
                     if (game.physics.arcade.distanceBetween(en.bandit, player.char) <= 500) {
-                        game.physics.arcade.moveToXY(en.bandit, player.char.x, player.char.y, 250);
+
+                        
+                        if (lvlID === 1) {
+                            game.physics.arcade.moveToXY(en.bandit, player.char.x, player.char.y, 150);
+                        }
+
+                        if (lvlID === 2) {
+                            game.physics.arcade.moveToXY(en.bandit, player.char.x, player.char.y, 300);
+                        }
+
+                        if (lvlID === 3) {
+                            game.physics.arcade.moveToXY(en.bandit, player.char.x, player.char.y, 450);
+                        }
+
+                      
                     }
 
                 }

@@ -22,6 +22,8 @@ let playerInfo = {
     lvl: 1,
     exp: 0,
     expToNextLvl: 200,
+    availableLvls: [true, false, false]
+
 }
 
 
@@ -177,7 +179,7 @@ let vm = new Vue({
             }
         },
         prepareLvlButtons() {
-            if (!this.playerInfo.availableLvls[0]) {
+            if (!playerInfo.availableLvls[0]) {
                 $('#btnLvl1').attr("disabled", true);
                 $('#btnLvl1').css({ 'opacity': '0.6' });
             } else {
@@ -185,7 +187,7 @@ let vm = new Vue({
                 $('#btnLvl1').css({ 'opacity': '1' });
             }
 
-            if (!this.playerInfo.availableLvls[1]) {
+            if (!playerInfo.availableLvls[1]) {
                 $('#btnLvl2').attr("disabled", true);
                 $('#btnLvl2').css({ 'opacity': '0.6' });
             } else {
@@ -193,7 +195,7 @@ let vm = new Vue({
                 $('#btnLvl2').css({ 'opacity': '1' });
             }
 
-            if (!this.playerInfo.availableLvls[2]) {
+            if (!playerInfo.availableLvls[2]) {
                 $('#btnLvl3').attr("disabled", true);
                 $('#btnLvl3').css({ 'opacity': '0.6' });
             } else {
