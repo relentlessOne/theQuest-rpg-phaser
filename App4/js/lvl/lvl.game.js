@@ -100,24 +100,24 @@
             player = new Player(game);
 
             if (lvlID === 1) {
-                for (let i = 0; i < 150 ; i++) {
+                for (let i = 0; i < 80 ; i++) {
                     enemies.push(new Bandit(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
                 }
-                numToKill = 150;
+                numToKill = 6;
             }
 
             if (lvlID === 2 ){
-                for (let i = 0; i < 80 ; i++) {
+                for (let i = 0; i < 60 ; i++) {
                     enemies.push(new Orc(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
                 }
-                numToKill = 80;
+                numToKill = 1;
             }
 
             if (lvlID === 3) {
                 for (let i = 0; i < 40 ; i++) {
                     enemies.push(new Skeleton(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
                 }
-                numToKill = 40;
+                numToKill = 1;
             }
 
 
@@ -178,11 +178,10 @@
 
         update() {
 
-            
-            if (numOfEnemiesKilled === numToKill) {
+            if (numToKill == numOfEnemiesKilled) {
                 window.dispatchEvent(evt1);
+                game.paused = true;
             }
-
 
             player.update();
             game.physics.arcade.collide(player.char, layer);
@@ -198,7 +197,7 @@
 
                         let bullet = bullets.getFirstDead();
 
-                        bullet.reset(player.char.x - 8, player.char.y - 8);
+                        bullet.reset(player.char.x + 28, player.char.y + 28);
 
                         game.physics.arcade.moveToPointer(bullet, playerInfo.bulletSpeed);
                     }
@@ -218,11 +217,21 @@
                 }
             }
 
+   
 
+            vm.sortedCollide(game, enemies);
+            
 
 
             for(let en of enemies) {
                 if (en.bandit.alive) {
+                    
+
+                    game.physics.enable(en.bandit, Phaser.Physics.ARCADE);
+                    en.bandit.body.collideWorldBounds = true;
+                    en.bandit.body.bounce.setTo(1, 1);
+               
+         
                     en.lookAtPlayer(player);
                     game.physics.arcade.collide(player.char, en.bandit, vm.collision);
                     game.physics.arcade.collide(bullets, en.bandit, vm.enemyKill);
@@ -267,24 +276,46 @@
             }
         }
 
+         leftOfBody(b) {
+            return b.x - b.halfWidth
+        }
+         rightOfBody(b) {
+            return b.x + b.halfWidth
+        }
+         sortedCollide(game, arr) {
+            arr.sort(function (a, b) {
+                return vm.leftOfBody(a.bandit.body) - vm.leftOfBody(b.bandit.body);
+            })
+            for (var i = 0; i < arr.length; ++i) {
+                var elem_i = arr[i].bandit
+
+                for (var j = i + 1; j < arr.length; ++j) {
+                    var elem_j = arr[j].bandit
+                    if (vm.rightOfBody(elem_i.body) < vm.leftOfBody(elem_j.body)) {
+                        break;
+                    }
+                    game.physics.arcade.collide(elem_i, elem_j)
+                }
+            }
+        }
 
 
         enemyKill(s1, s2) {
             setTimeout(function () {
-                s1.destroy();
+                s1.kill();
                 if (lvlID === 1) {
-                    playerInfo.exp += 50;
+                    playerInfo.exp += 50 * playerInfo.lvl;
                 }
 
                 if (lvlID === 2) {
-                    playerInfo.exp += 100;
+                    playerInfo.exp += 150 * playerInfo.lvl * 1.25;
                 }
 
                 if (lvlID === 3) {
-                    playerInfo.exp += 150;
+                    playerInfo.exp += 300 * playerInfo.lvl * 1.25;
                 }
 
-                if (playerInfo.exp === playerInfo.expToNextLvl) {
+                if (playerInfo.exp >= playerInfo.expToNextLvl) {
                     player.stats.lvlUp(playerInfo);
                     window.dispatchEvent(evLvlUp);
                     healthBarPrecent = playerInfo.maxHp;
@@ -300,7 +331,7 @@
                 numOfEnemiesKilled++;
             }, 100);
 
-            s2.destroy();
+            s2.kill();
         }
 
         getLvlID() {
@@ -311,15 +342,15 @@
             Debug.writeln(player.direction);
 
             if (lvlID === 1) {
-                healthBarPrecent -= 1;
+                healthBarPrecent -= 5;
             }
 
             if (lvlID === 2) {
-                healthBarPrecent -= 4;
+                healthBarPrecent -= 20;
             }
 
             if (lvlID === 3) {
-                healthBarPrecent -= 10;
+                healthBarPrecent -= 50;
             }
 
             healthBarPrecent -= 1;

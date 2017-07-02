@@ -9,11 +9,11 @@
         lvlUp(player) {
                
             player.lvl++;
-            player.expToNextLvl *= 1.5;
-            player.bulletSpeed += 20;
-            player.maxBulletDistance += 40;
-            player.maxHp += 50;
-            player.maxMana += 40;
+            player.expToNextLvl += 500 * player.lvl;
+            player.bulletSpeed += 10;
+            player.maxBulletDistance += 5;
+            player.maxHp += 100;
+            player.maxMana += 100;
             player.manaRefreshRate -= 250;
             player.exp = 0;
         }

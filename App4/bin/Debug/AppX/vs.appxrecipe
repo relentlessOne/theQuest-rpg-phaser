@@ -148,11 +148,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\lvl\lvl.game.js">
       <PackagePath>js\lvl\lvl.game.js</PackagePath>
-      <Modified>2017-06-25T17:20:01.579</Modified>
+      <Modified>2017-07-02T14:14:52.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player\player.stats.js">
       <PackagePath>js\player\player.stats.js</PackagePath>
-      <Modified>2017-06-25T17:11:48.023</Modified>
+      <Modified>2017-06-26T12:25:02.826</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player\player.js">
       <PackagePath>js\player\player.js</PackagePath>
@@ -180,7 +180,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.menu.vue.js">
       <PackagePath>js\main.menu.vue.js</PackagePath>
-      <Modified>2017-06-25T17:25:51.598</Modified>
+      <Modified>2017-07-02T14:14:23.808</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vueResources.js">
       <PackagePath>libs\vueResources.js</PackagePath>
@@ -220,7 +220,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2017-06-25T16:42:35.910</Modified>
+      <Modified>2017-07-02T12:37:09.956</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap_kanion.csv">
       <PackagePath>level_info\worldMap_kanion.csv</PackagePath>
