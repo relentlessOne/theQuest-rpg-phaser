@@ -16,6 +16,12 @@
 </head>
 <body>
     <div id="gameMenu">
+
+        <audio id="main-music" autoplay loop src="sounds/Game-Menu_Looping.mp3"></audio>
+        <audio id="lvl1-music"   src="sounds/Fantasy_Game_Background_Looping.mp3"></audio>
+        <audio id="lvl2-music"   src="sounds/Lost-Jungle_Looping.mp3"></audio>
+        <audio id="lvl3-music"   src="sounds/Surreal-Chase_Looping.mp3"></audio>
+
         <div id="user-name-animate" class="user-name">
             <p>
                 Welcome {{user.email}}
@@ -37,6 +43,39 @@
                 <p style="color:red;font-weight:bold;font-size:20px" v-html="error"></p>
             </div>
         </div>
+
+
+        <div id="creditsModal" ref="modal" class="modal">
+            <div class="modal-content">
+                <p>
+                    Music
+                    <br />
+                    “Game Menu Looping”
+                    <br />
+                    “Lost Jungle Looping”
+                    <br />
+                    “Surreal Chase Looping”
+                    <br />
+                    by Eric Matyas
+                    <br />
+                    www.soundimage.org
+                    <br />
+                    <br />
+                    Characters
+                    <br />
+                    http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/
+                    <br />
+                    <br />
+                    Map assets
+                    <br />
+                    https://opengameart.org/
+                </p>
+                <div v-on:click="closeCreditsModal()" style="background:black;color:white;border-radius:25px">
+                    Close
+                </div>
+            </div>
+        </div>
+
         <div v-on:click="backMenuClick()" id="backMenu" class="back-to-menu">
             <p>
                 Back to menu
@@ -62,6 +101,13 @@
             <p id="playerMaxHp"></p>
             <p id="playerMaxMana"></p>
             <p id="playerExpToNextLvl"></p>
+
+        </div>
+        <div class="extraButtons">
+            <div v-on:click="creditsClick()" class="btn">Credits</div>
+        </div>
+        <div class="extraButtons1">
+            <div v-on:click="muteClick()" id="muteBtn" class="btn">Mute</div>
         </div>
         <div id="phaser-view"></div>
         <div id="modalpause" ref="modal" class="modal-pause">

@@ -9,6 +9,8 @@
 firebase.initializeApp(config);
 
 
+let muted = false;
+
 
 let playerInfoCpy = {};
 let playerInfo = {
@@ -80,7 +82,7 @@ let vm = new Vue({
                                 usernameanim.className += " user-name-animation";
                                 setTimeout(function () {
                                     usernameanim.className += " user-name-animation-out";
-                                }, 5000);
+                                }, 2000);
                                 vm.user = user;
 
                             }).fail(function (jqXHR, textStatus, error) {
@@ -142,8 +144,13 @@ let vm = new Vue({
                     });
             }
         },
-        loadUserData: function () {
-
+        creditsClick: function () {
+            let creditsModal = document.getElementById('creditsModal');
+            creditsModal.style.display = "block";
+        },
+        closeCreditsModal: function(){
+            let creditsModal = document.getElementById('creditsModal');
+            creditsModal.style.display = "none";
         },
         lvl1Click: function () {
             buttons.className = 'fadeOut';
@@ -178,6 +185,26 @@ let vm = new Vue({
         },
         backMenuClick: function () {
             if (!this.disableBack) {
+
+                let music1 = document.getElementById('lvl1-music');
+                let music2 = document.getElementById('lvl2-music');
+                let music3 = document.getElementById('lvl3-music');
+
+                music1.pause();
+                music1.currentTime = 0;
+                music2.pause();
+                music2.currentTime = 0;
+                music3.pause();
+                music3.currentTime = 0;
+
+                if (!muted) {
+                    let menu = document.getElementById('main-music');
+
+                    menu.play();
+                    menu.loop = true;
+                }
+ 
+
                 currentLvl.endLevel();
                 buttons.className = 'showButtons';
                 title.className = ' downTitle'
@@ -311,6 +338,20 @@ let vm = new Vue({
                 lvlUp.className = "lvlUpOut";
             }, 1200);
         },
+        muteClick(){
+            muted = !muted;
+            if (muted) {
+                let menu = document.getElementById('main-music');
+                menu.pause();
+                menu.currentTime = 0;
+                document.getElementById('muteBtn').innerHTML = "Unmute"
+            } else {
+                let menu = document.getElementById('main-music');
+                menu.play();
+                menu.loop = true;
+                document.getElementById('muteBtn').innerHTML = "Mute"
+            }
+        },
         loadPlayerLvlInfo() {
             playerLVL.innerText = "Lvl: " + playerInfo.lvl;
             playerMaxHp.innerText = "Max HP: " + playerInfo.maxHp;
@@ -343,3 +384,34 @@ window.addEventListener('levelUp', function (e) {
 
     vm.levelUp();
 });
+
+window.addEventListener("musicEvt", function (evt) {
+
+    if (!muted) {
+        let menu = document.getElementById('main-music');
+        menu.pause();
+        menu.currentTime = 0;
+
+        if (evt.detail === 1) {
+            let music = document.getElementById('lvl1-music');
+            music.play();
+            music.loop = true;
+        }
+
+        if (evt.detail === 2) {
+            let music = document.getElementById('lvl2-music');
+            music.play();
+            music.loop = true;
+        }
+
+
+        if (evt.detail === 3) {
+            let music = document.getElementById('lvl3-music');
+            music.play();
+            music.loop = true;
+        }
+    }
+
+   
+
+}, false);

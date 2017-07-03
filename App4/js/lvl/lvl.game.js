@@ -45,6 +45,10 @@
     class Lvl {
         constructor(_lvlID, _playerInfo) {
 
+            let musicLoadEvt = document.createEvent("CustomEvent");
+            musicLoadEvt.initCustomEvent("musicEvt", true, true, _lvlID);
+            window.dispatchEvent(musicLoadEvt);
+
             playerInfo = _playerInfo;
             lvlID = _lvlID;
             game = new Phaser.Game(w, h, Phaser.AUTO, 'phaser-view', { preload: this.preload, create: this.create, update: this.update });
@@ -103,21 +107,21 @@
                 for (let i = 0; i < 80 ; i++) {
                     enemies.push(new Bandit(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
                 }
-                numToKill = 6;
+                numToKill = 80;
             }
 
             if (lvlID === 2 ){
                 for (let i = 0; i < 60 ; i++) {
                     enemies.push(new Orc(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
                 }
-                numToKill = 1;
+                numToKill = 60;
             }
 
             if (lvlID === 3) {
                 for (let i = 0; i < 40 ; i++) {
                     enemies.push(new Skeleton(game, Math.floor((Math.random() * 1600) + 400), Math.floor((Math.random() * 1600) + 200)));
                 }
-                numToKill = 1;
+                numToKill = 40;
             }
 
 
@@ -179,8 +183,9 @@
         update() {
 
             if (numToKill == numOfEnemiesKilled) {
-                window.dispatchEvent(evt1);
+
                 game.paused = true;
+                window.dispatchEvent(evt1);
             }
 
             player.update();
