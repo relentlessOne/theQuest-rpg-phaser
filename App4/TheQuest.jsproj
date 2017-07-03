@@ -105,11 +105,11 @@
     <Content Include="level_info\worldMap.json" />
     <Content Include="level_info\worldMap_kanion.csv" />
     <Content Include="libs\vueResources.js" />
-    <Content Include="sounds\Fantasy_Game_Background_Looping.mp3" />
     <Content Include="sounds\fx_mixdown.mp3" />
     <Content Include="sounds\Game-Menu_Looping.mp3" />
     <Content Include="sounds\Lost-Jungle_Looping.mp3" />
     <Content Include="sounds\Surreal-Chase_Looping.mp3" />
+    <Content Include="sounds\The-Magic-Box_Lopping.mp3" />
     <None Include="App4_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />

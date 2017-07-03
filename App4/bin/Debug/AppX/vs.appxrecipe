@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-07-03T13:12:46.201</Modified>
+      <Modified>2017-07-03T16:42:11.906</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -148,7 +148,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\lvl\lvl.game.js">
       <PackagePath>js\lvl\lvl.game.js</PackagePath>
-      <Modified>2017-07-03T13:58:07.053</Modified>
+      <Modified>2017-07-03T19:02:37.939</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\player\player.stats.js">
       <PackagePath>js\player\player.stats.js</PackagePath>
@@ -180,7 +180,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\js\main.menu.vue.js">
       <PackagePath>js\main.menu.vue.js</PackagePath>
-      <Modified>2017-07-03T13:56:18.355</Modified>
+      <Modified>2017-07-03T19:01:13.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\libs\vueResources.js">
       <PackagePath>libs\vueResources.js</PackagePath>
@@ -212,7 +212,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2017-07-03T13:34:10.077</Modified>
+      <Modified>2017-07-03T18:27:41.955</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\fonts\nokia16black.xml">
       <PackagePath>fonts\nokia16black.xml</PackagePath>
@@ -220,15 +220,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\index.html">
       <PackagePath>index.html</PackagePath>
-      <Modified>2017-07-03T13:53:48.725</Modified>
+      <Modified>2017-07-03T18:22:59.369</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\level_info\worldMap_kanion.csv">
       <PackagePath>level_info\worldMap_kanion.csv</PackagePath>
       <Modified>2017-06-24T22:17:23.281</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\sounds\Fantasy_Game_Background_Looping.mp3">
-      <PackagePath>sounds\Fantasy_Game_Background_Looping.mp3</PackagePath>
-      <Modified>2017-07-03T13:02:05.316</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\sounds\fx_mixdown.mp3">
       <PackagePath>sounds\fx_mixdown.mp3</PackagePath>
@@ -246,10 +242,14 @@
       <PackagePath>sounds\Surreal-Chase_Looping.mp3</PackagePath>
       <Modified>2017-07-03T13:03:05.977</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\sounds\The-Magic-Box_Lopping.mp3">
+      <PackagePath>sounds\The-Magic-Box_Lopping.mp3</PackagePath>
+      <Modified>2017-07-03T16:40:12.586</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\PC\Desktop\theQuest-rpg-phaser\App4\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-07-03T13:12:46.148</Modified>
+      <Modified>2017-07-03T16:42:11.785</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

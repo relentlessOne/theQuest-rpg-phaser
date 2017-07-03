@@ -8,9 +8,9 @@
 };
 firebase.initializeApp(config);
 
-
+let i = 0;
 let muted = false;
-
+let loginTimeout;
 
 let playerInfoCpy = {};
 let playerInfo = {
@@ -77,10 +77,11 @@ let vm = new Vue({
                                 playerInfoCpy = Object.assign({}, data);
                                 vm.loadPlayerLvlInfo();
                                 vm.prepareLvlButtons();
+                                document.getElementById('animateBottom').style.display = 'block';
                                 modal.style.display = "none";
                                 let usernameanim = document.getElementById('user-name-animate')
                                 usernameanim.className += " user-name-animation";
-                                setTimeout(function () {
+                                loginTimeout = setTimeout(function () {
                                     usernameanim.className += " user-name-animation-out";
                                 }, 2000);
                                 vm.user = user;
@@ -153,6 +154,10 @@ let vm = new Vue({
             creditsModal.style.display = "none";
         },
         lvl1Click: function () {
+            let usernameanim = document.getElementById('user-name-animate')
+            clearTimeout(loginTimeout);
+            usernameanim.className += " user-name-animation-out";
+            document.getElementById('animateBottom').style.display = 'none';
             buttons.className = 'fadeOut';
             title.className = 'moveUp';
             backMenu.className = 'back-to-menu showBackMenu';
@@ -164,6 +169,10 @@ let vm = new Vue({
 
         },
         lvl2Click: function () {
+            let usernameanim = document.getElementById('user-name-animate')
+            clearTimeout(loginTimeout);
+            usernameanim.className += " user-name-animation-out";
+            document.getElementById('animateBottom').style.display = 'none';
             buttons.className = 'fadeOut';
             title.className = 'moveUp';
             backMenu.className = 'back-to-menu showBackMenu';
@@ -174,6 +183,10 @@ let vm = new Vue({
             }, 1200);
         },
         lvl3Click: function () {
+            let usernameanim = document.getElementById('user-name-animate')
+            clearTimeout(loginTimeout);
+            usernameanim.className += " user-name-animation-out";
+            document.getElementById('animateBottom').style.display = 'none';
             buttons.className = 'fadeOut';
             title.className = 'moveUp';
             backMenu.className = 'back-to-menu showBackMenu';
@@ -185,7 +198,7 @@ let vm = new Vue({
         },
         backMenuClick: function () {
             if (!this.disableBack) {
-
+                document.getElementById('animateBottom').style.display = 'block';
                 let music1 = document.getElementById('lvl1-music');
                 let music2 = document.getElementById('lvl2-music');
                 let music3 = document.getElementById('lvl3-music');
@@ -256,15 +269,16 @@ let vm = new Vue({
                 $('#btnLvl3').css({ 'opacity': '1' });
             }
         },
-        updateLvlButtonsArr: function() {
+        updateLvlButtonsArr: function (num) {
 
-            if (vm.arraysEqual(playerInfo.availableLvls, [true, false, false])) {
+            if (num === 1) {
                 playerInfo.availableLvls = [true, true, false];
+            } else {
+                playerInfo.availableLvls = [true, true, true];
             }
 
-            if (vm.arraysEqual(playerInfo.availableLvls, [true, true, false])) {
-                playerInfo.availableLvls = [true, true, true];
-            }          
+          
+                     
         },
         arraysEqual:function(arr1, arr2) {
             if(arr1.length !== arr2.length)
@@ -283,7 +297,7 @@ let vm = new Vue({
         },
         deathAgain: function () {
             currentLvl.endLevel();
-
+            playerInfo = Object.assign({}, playerInfoCpy);
 
             if (currentLvl.getLvlID() === 1) {
                 currentLvl = new Lvl(1, playerInfo);
@@ -301,8 +315,8 @@ let vm = new Vue({
 
             modalDeath.style.display = "none";
         },
-        levelCompleted: function () {
-            vm.updateLvlButtonsArr();
+        levelCompleted: function (num) {
+            vm.updateLvlButtonsArr(num);
             firebase.auth().currentUser.getIdToken()
              .then(
                  (token) => {
@@ -332,6 +346,9 @@ let vm = new Vue({
 
         },
         levelUp() {
+
+         
+
             lvlUp.className = "lvlUpIn";
             lvl.innerText = "Lvl up " + playerInfo.lvl;
             setTimeout(() => {
@@ -364,6 +381,8 @@ let vm = new Vue({
 
 
 
+document.getElementById('animateBottom').style.display = 'none';
+
 
 
 
@@ -375,10 +394,10 @@ window.addEventListener('playerDead', function (e) {
     vm.playerDead();
 });
 
-window.addEventListener('levelCompleted', function (e) {
+window.addEventListener('levelCompleted', function (evt) {
 
-    vm.levelCompleted();
-});
+    vm.levelCompleted(evt.detail);
+}, false);
 
 window.addEventListener('levelUp', function (e) {
 

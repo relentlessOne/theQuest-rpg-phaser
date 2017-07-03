@@ -5,6 +5,7 @@
     let mapArr;
     let w = 1024;
     let h = 600;
+    let fx;
     let map;
     let layer;
     let marker = {};
@@ -31,7 +32,6 @@
     let evLvlUp;
     let numToKill;
     let numOfEnemiesKilled;
-
     let manaRefreshTimeout = null;
 
 
@@ -55,7 +55,8 @@
             vm = this;
             enemies = [];
             evt = new CustomEvent('playerDead');
-            evt1 = new CustomEvent('levelCompleted');
+            evt1 = document.createEvent("CustomEvent");
+            evt1.initCustomEvent("levelCompleted", true, true, _lvlID);
             evLvlUp = new CustomEvent('levelUp');
             healthBarPrecent = playerInfo.maxHp;
             manaBarPrecent = playerInfo.maxMana;
@@ -84,6 +85,8 @@
             game.load.image('tile4', 'level_info/terrain_atlas.png');
 
             new LoadSprites(this);
+
+            game.load.audio('sfx', ['sounds/fx_mixdown.mp3']);
         }
 
         endLevel() {
@@ -100,6 +103,9 @@
             map.addTilesetImage('obj_misk_atlas', 'tile3');
             layer = map.createLayer('lay1');
             layer = map.createLayer('lay2');
+            fx = game.add.audio('sfx');
+            fx.allowMultiple = true;
+            fx.addMarker('death', 1, 1.0);
 
             player = new Player(game);
 
@@ -182,10 +188,17 @@
 
         update() {
 
-            if (numToKill == numOfEnemiesKilled) {
+            numOfEnemiesKilled = 0;
+            enemies.forEach(
+                (e) => {
+                    if (!e.bandit.alive) numOfEnemiesKilled++;
+                });
 
-                game.paused = true;
+
+
+            if (numToKill === numOfEnemiesKilled) {
                 window.dispatchEvent(evt1);
+                game.paused = true;
             }
 
             player.update();
@@ -333,10 +346,12 @@
                 expBar.setPercent((playerInfo.exp * 100) / playerInfo.expToNextLvl);
 
 
-                numOfEnemiesKilled++;
+               
             }, 100);
 
             s2.kill();
+         
+            fx.play('death');
         }
 
         getLvlID() {

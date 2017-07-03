@@ -89,6 +89,10 @@ h1 {
         font-size: 2em;
     }
 }
+
+
+
+
 .button:before {
     content: "";
     position: absolute;
@@ -537,5 +541,18 @@ body {
          visibility:hidden;
         opacity: 0;
         transform: scale(0);
+    }
+}
+
+.show{
+     animation: show 0.5s normal forwards ease-in-out;
+}
+
+@keyframes show{
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity: 1;
     }
 }
