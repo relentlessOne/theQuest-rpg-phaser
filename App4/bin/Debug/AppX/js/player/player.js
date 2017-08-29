@@ -59,7 +59,7 @@ let Player = (function () {
             if (key_S.isDown) count++;
             if (key_A.isDown) count++;
             if (key_D.isDown) count++;
-            Debug.writeln(count);
+           // Debug.writeln(count);
 
             if (count == 1) {
                 return true;

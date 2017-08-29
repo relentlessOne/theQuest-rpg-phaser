@@ -359,7 +359,7 @@
         }
 
         collision(s1, s2) {
-            Debug.writeln(player.direction);
+            //Debug.writeln(player.direction);
 
             if (lvlID === 1) {
                 healthBarPrecent -= 5;
